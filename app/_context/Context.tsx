@@ -59,7 +59,7 @@ const [lang , setLang] = useState("")
         useEffect(() => {
           // NOTE: This should be set based on some kind of toggle or theme selector.
           // I've added this here for demonstration purposes
-          localStorage.setItem("theme", "dark");
+          localStorage.setItem("theme", "light");
       
           // If the user has selected a theme, use that
           const selectedTheme = localStorage.getItem("theme");
