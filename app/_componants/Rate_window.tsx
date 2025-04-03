@@ -1,17 +1,8 @@
 "use client"
 import React, { useContext, useState } from 'react'
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-  } from "@/components/ui/select"
 import { GoStarFill } from 'react-icons/go'
 import { IoIosLogIn } from "react-icons/io";
-// import { MyRates } from '../products/[product_id]/page';
+import { MyRates } from '../[product_id]/page';
 import { Provider } from '../_context/Context';
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore';
@@ -19,7 +10,7 @@ import { db } from '../config';
 
 function Rate_window(props:{id_product:string}) {
 
-    // const setWindow:any = useContext(MyRates)
+    const setWindow:any = useContext(MyRates)
     const [close,setClosed] = useState(false)
 
 
@@ -141,7 +132,7 @@ const [Number,setNumber] = useState("")
    className="inline-block rounded-sm border bg-slate-50 border-[#ccc] px-8 py-3 text-sm font-medium text-black hover:bg-red-500 hover:text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
    href="#"
    onClick={() => {
-    // setWindow(false)
+    setWindow(false)
    }}
  >
    Cancel

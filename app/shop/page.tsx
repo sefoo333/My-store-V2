@@ -260,7 +260,7 @@ const [cart,setCart] = useState([])
             {filtermoney.length > 0 ? (
              <>
              {filtermoney.map((e:any) => (
-               <Product Title={e.Title} imagesize=""  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} key={e.id} />
+               <Product Title={e.Title} count={e?.count} imagesize=""  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} key={e.id} />
               ))}
               </>
             ) : (
@@ -276,7 +276,7 @@ const [cart,setCart] = useState([])
          {filter2.length > 0 ? (
           <>
           {filter2.map((e:any) => (
-            <Product Title={e.Title} imagesize="w-full"  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} key={e.id} />
+            <Product Title={e.Title} count={e?.count} imagesize="w-full"  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} key={e.id} />
            ))}
            </>
          ) : (
@@ -324,7 +324,7 @@ const [cart,setCart] = useState([])
   <div className={`products relative grid grid-cols-3 max-md:grid-cols-1 max-2xl:grid-cols-2 gap-[50px] w-full mt-[60px] justify-center  items-center `}>
   <>
   {Data.map((e:any) => (
- <Product Title={e.Title} category={e.category} imagesize="w-full" parentsize={"h-[60%]"}  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} id={e.id} key={e.id} />
+ <Product Title={e.Title} category={e.category} count={e?.count} imagesize="w-full" parentsize={"h-[60%]"}  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} id={e.id} key={e.id} />
 ))}
   </>
             </div>

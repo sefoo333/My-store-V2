@@ -248,7 +248,7 @@ const product:any = useRef(null)
             }}>
             <div className={`products relative grid grid-cols-4 max-md:grid-cols-1 max-xl:grid-cols-2 w-full mt-[60px] justify-start justify-items-center `}>
             {products.slice(0,4).map((e:any) => (
- <Product Title={e.Title} category={e.category} imagesize="w-full" Description={e.description} Rate={5} price={e.price} discount={e.discount} thumb={e.image} id={e.id} key={e.id} />
+ <Product Title={e.Title} category={e.category} count={e?.count} imagesize="w-full" Description={e.description} Rate={5} price={e.price} discount={e.discount} thumb={e.image} id={e.id} key={e.id} />
 ))}
             </div>
             </div>

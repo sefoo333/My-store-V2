@@ -95,7 +95,7 @@ const user:any = useContext(Provider)
        <GoStarFill key={i} />
      ))
    }
-      <span className='ml-1 text-[14px] text-gray-700'>(100)</span>
+      <span className='ml-1 text-[14px] text-gray-700'>({props?.count})</span>
       
       </div>         
       
