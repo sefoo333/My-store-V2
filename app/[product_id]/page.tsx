@@ -14,15 +14,16 @@ import Rate_window from '../_componants/Rate_window'
 import { toast, Toaster } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../_componants/Carsoual'
+import { useParams } from 'next/navigation';
 
 export const Rates = createContext(true)
 
 
 
-function page({params}:any) {
+function page() {
 
   const [count,setCount] = useState(1)
-  const { Product_id }:any = use(params);
+  const {product_id}:any = useParams();
 
 
 
@@ -51,10 +52,10 @@ const [isZoomed, setIsZoomed] = useState(false);
   const [data22, setData2]:any = useState([])
   useEffect(() => {
     const getData = async () => {
-    const data2:any =  (await getDoc(doc(db,"products" , `${Product_id}`))).data();
+    const data2:any =  (await getDoc(doc(db,"products" , `${product_id}`))).data();
     console.log(data)
     setData({
-      id:Product_id,
+      id:product_id,
       ...data2
     })
     }
@@ -125,7 +126,7 @@ const { t, i18n } = useTranslation();
     <Navbar className="text-black" />
 <Rates.Provider value={setWindow}>
 {rate_window ? (
-      <Rate_window id_product={`${Product_id}`} />
+      <Rate_window id_product={`${product_id}`} />
 
 ) : null}
 </Rates.Provider>
@@ -191,7 +192,7 @@ const { t, i18n } = useTranslation();
     </li>
 
     <li>
-      <a href="#" className="block transition hover:text-gray-700"> {Product_id} </a>
+      <a href="#" className="block transition hover:text-gray-700"> {product_id} </a>
     </li>
   </ol>
 </nav>
