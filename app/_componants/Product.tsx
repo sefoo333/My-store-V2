@@ -77,7 +77,7 @@ const user:any = useContext(Provider)
    
    <div className={`card mt-[90px] max-xl:mt-[30px] w-[300px] rounded-xl  ${props?.parentsize} max-xl:w-full`}>
             <Toaster />
-          <div className="image bg-[#e9e9e9] rounded-2xl  flex justify-center p-[20px] py-[40px]">
+          <div className="image bg-[#e9e9e9] dark:bg-gray-800 rounded-2xl  flex justify-center p-[20px] py-[40px]">
           {props.discont > 0 ? (
             <span className='Discount absolute text-[17px] font-extralight text-white px-[15px] py-[5px] bg-red-400 left-[15px] top-[30px] rounded-sm'>-{props.discont}%</span>
           ) : null}
@@ -117,7 +117,7 @@ const user:any = useContext(Provider)
    <div onClick={() => {
       addToWishlist();
         setWishlist((e) => e++)
-    }} className="button cursor-pointer p-[10px] flex justify-center items-center bg-slate-50 rounded-full">
+    }} className="button cursor-pointer p-[12px] flex justify-center items-center bg-slate-50 rounded-full dark:bg-gray-800 dark:text-white">
        <IoMdHeartEmpty size={20} />
    </div>
           </div>

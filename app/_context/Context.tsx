@@ -53,9 +53,33 @@ const [lang , setLang] = useState("")
               setD(false)
             },2000)
         },[])
+
+
+
+        useEffect(() => {
+          // NOTE: This should be set based on some kind of toggle or theme selector.
+          // I've added this here for demonstration purposes
+          localStorage.setItem("theme", "dark");
+      
+          // If the user has selected a theme, use that
+          const selectedTheme = localStorage.getItem("theme");
+      
+          if (selectedTheme) {
+            document.body.classList.add(selectedTheme);
+      
+            // Else if the users OS preferences prefers dark mode
+          } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.body.classList.add("dark");
+      
+            // Else use light mode
+          } else {
+            document.body.classList.add("light");
+          }
+        }, []);
+
         return (
       <div  className={`${value?.lang === "ar" ? `${geistSans.className}` : ""} antialiased`}>
-          <div className="loader fixed flex-col-reverse w-full h-full flex justify-center items-center bg-slate-100 left-0 top-0 z-[9999999999999999999999999999999] animate-end-sec">
+          <div className="loader fixed dark:text-black flex-col-reverse w-full h-full flex justify-center items-center bg-slate-100 left-0 top-0 z-[9999999999999999999999999999999] animate-end-sec">
           <div className="cube"></div>
           <h1 className="font-[800] text-[100px] animate-pre-start max-xl:text-[50px]">Sefoo Store</h1>
         </div>

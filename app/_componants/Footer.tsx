@@ -8,10 +8,10 @@ function Footer() {
 
 
   return (
-    <footer className="bg-white">
-    <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
-      <div className="sm:flex sm:items-center sm:justify-between">
-        <div className="text-blue-500">
+<footer className="bg-white dark:bg-gray-900">
+<div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+<div className="sm:flex sm:items-center sm:justify-between">
+<div className="text-blue-500">
          <h1 className='text-[30px] font-semibold'>Sefoo Store</h1>
         </div>
   
@@ -21,8 +21,8 @@ function Footer() {
               href="#"
               rel="noreferrer"
               target="_blank"
-              className="text-gray-700 transition hover:opacity-75"
-            >
+              className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              >
               <span className="sr-only">Facebook</span>
   
               <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -40,8 +40,8 @@ function Footer() {
               href="#"
               rel="noreferrer"
               target="_blank"
-              className="text-gray-700 transition hover:opacity-75"
-            >
+              className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              >
               <span className="sr-only">Instagram</span>
   
               <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -61,8 +61,8 @@ function Footer() {
               href="#"
               rel="noreferrer"
               target="_blank"
-              className="text-gray-700 transition hover:opacity-75"
-            >
+              className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              >
               <span className="sr-only">GitHub</span>
   
               <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -78,10 +78,10 @@ function Footer() {
       </div>
   
       <div
-        className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16"
+      className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800"
       >
         <div>
-          <p className="font-medium text-gray-900">Pages</p>
+          <p className="font-medium text-gray-900 dark:text-white">Pages</p>
   
           <ul className="mt-6 space-y-4 text-sm">
            {pages.map((e) => (
@@ -93,7 +93,7 @@ function Footer() {
         </div>
   
         <div>
-          <p className="font-medium text-gray-900">Products</p>
+          <p className="font-medium text-gray-900 dark:text-white">Products</p>
   
           <ul className="mt-6 space-y-4 text-sm">
             <li>
@@ -111,7 +111,7 @@ function Footer() {
         </div>
   
         <div>
-          <p className="font-medium text-gray-900">Helpful Links</p>
+          <p className="font-medium text-gray-900 dark:text-white">Helpful Links</p>
   
           <ul className="mt-6 space-y-4 text-sm">
             <li>
@@ -129,7 +129,7 @@ function Footer() {
         </div>
   
         <div>
-          <p className="font-medium text-gray-900">Categories</p>
+          <p className="font-medium text-gray-900 dark:text-white">Categories</p>
   
           <ul className="mt-6 space-y-4 text-sm">
           {Categories.map((e) => (

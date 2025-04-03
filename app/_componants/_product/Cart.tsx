@@ -71,7 +71,7 @@ setCount(props.count)
 
   return (
       <tr>
-            <td className="whitespace-nowrap px-7 pr-9 py-2 text-gray-700  flex items-center gap-[30px]">
+            <td className="whitespace-nowrap px-7 pr-9 py-2 text-gray-700  flex items-center gap-[30px] dark:*:text-white">
             <img src={props.image} className='aspect-square rounded-xl object-contain  w-[10%] max-xl:hidden' alt='' width={300} height={300} />
             <h1 className='font-semibold text-wrap'>{props.Title}</h1>
             </td>
@@ -81,8 +81,8 @@ setCount(props.count)
             <div>
       <label htmlFor="Quantity" className="sr-only"> Quantity </label>
     
-      <div className="flex items-center w-fit rounded-sm border border-gray-200">
-        <button type="button" className="size-10 leading-10 text-gray-600 transition hover:opacity-75 cursor-pointer" onClick={() => {
+      <div className="flex items-center w-fit rounded-sm border border-gray-200 dark:*:text-white">
+        <button type="button" className="size-10 leading-10 dark:text-white text-gray-600 transition hover:opacity-75 cursor-pointer" onClick={() => {
 
 
 if (count>=0){
@@ -98,10 +98,10 @@ if (count>=0){
           id="Quantity"
           value={count}
           readOnly
-          className="h-10 w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+          className="h-10 w-16 dark:text-white border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
         />
     
-        <button type="button" className="size-10 leading-10 text-gray-600 transition hover:opacity-75 cursor-pointer" onClick={() =>{
+        <button type="button" className="size-10 leading-10 dark:text-white text-gray-600 transition hover:opacity-75 cursor-pointer" onClick={() =>{
            setCount(count+1)
            countUp(count + 1)
           }}>

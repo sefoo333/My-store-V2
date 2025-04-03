@@ -1,6 +1,5 @@
 "use client"
-import Image from 'next/image'
-import React, { createContext, use, useContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, FC, use, useContext, useEffect, useRef, useState } from 'react'
 import Navbar from '../_componants/Navbar'
 import { GoStarFill } from 'react-icons/go'
 import { TbTruckDelivery } from "react-icons/tb";
@@ -15,85 +14,16 @@ import Rate_window from '../_componants/Rate_window'
 import { toast, Toaster } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../_componants/Carsoual'
+import { useParams } from 'next/navigation';
 
 export const Rates = createContext(true)
 
+
+
 function page({params}:any) {
-  const {product_id}:any = use(params)
+
   const [count,setCount] = useState(1)
-  const products:any = [{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:20,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:false,
-  id:1
-},
-{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:0,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:true,
-  id:2
-},
-{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:0,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:false,
-  id:3
-},
-{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:0,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:false,
-  id:4
-},
-{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:0,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:false,
-  id:5
-},
-
-
-
-
-
-]
-const product:any = useRef(null) 
-
+  const { product_id }:any = use(params);
 
 
 
@@ -122,7 +52,7 @@ const [isZoomed, setIsZoomed] = useState(false);
   const [data22, setData2]:any = useState([])
   useEffect(() => {
     const getData = async () => {
-    const data2:any =  (await getDoc(doc(db,"products" , product_id))).data();
+    const data2:any =  (await getDoc(doc(db,"products" , `${product_id}`))).data();
     console.log(data)
     setData({
       id:product_id,
@@ -196,7 +126,7 @@ const { t, i18n } = useTranslation();
     <Navbar className="text-black" />
 <Rates.Provider value={setWindow}>
 {rate_window ? (
-      <Rate_window id_product={product_id} />
+      <Rate_window id_product={`${product_id}`} />
 
 ) : null}
 </Rates.Provider>
@@ -474,16 +404,13 @@ const { t, i18n } = useTranslation();
   <div className="range flex justify-between gap-[50px] max-xl:justify-start max-xl:gap-[20px]">
     <h1 className='font-semibold'>5 Rates</h1>
 
-    <div>
-  <span
+    <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "5").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>
   </span>
-</div>
 
 <h1>{((data?.reviews?.filter((e:any) => e.rate_nums === "5").length / data?.reviews?.length) * 100).toFixed()}%</h1>
   </div>
@@ -495,7 +422,6 @@ const { t, i18n } = useTranslation();
   <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "4").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>
@@ -512,7 +438,6 @@ const { t, i18n } = useTranslation();
   <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "3").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>
@@ -529,7 +454,6 @@ const { t, i18n } = useTranslation();
   <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "2").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>
@@ -546,7 +470,6 @@ const { t, i18n } = useTranslation();
   <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "1").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>

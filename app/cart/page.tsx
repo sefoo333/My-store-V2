@@ -59,11 +59,11 @@ const all = (total + Tax ) - Discount
 </div>
 
 <div className="cart w-[80%] max-xl:w-full mt-[40px]">
-<div className="overflow-x-auto rounded-lg border border-gray-200">
-  <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-    <thead className="ltr:text-left rtl:text-right">
-      <tr>
-        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("cart_title")}</th>
+<div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-800">
+<table className="min-w-full divide-y-2 divide-gray-200 dark:divide-gray-700">
+<thead className="ltr:text-left rtl:text-right">
+<tr className="*:font-medium *:text-gray-900 dark:*:text-white">
+<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("cart_title")}</th>
         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("cart_category")}</th>
         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("cart_price")}</th>
         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("cart_count")}</th>
@@ -88,7 +88,7 @@ const all = (total + Tax ) - Discount
 </div>
 
 <div className="checout w-[80%]">
-<div className="mt-8 flex justify-start border-t border-gray-100 pt-8">
+<div className="mt-8 flex justify-start border-t border-gray-100 pt-8 dark:border-gray-900">
           <div className="w-screen max-w-lg space-y-4">
             <dl className="space-y-0.5 text-sm text-gray-700">
               <div className="flex justify-between">

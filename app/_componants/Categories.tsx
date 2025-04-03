@@ -30,7 +30,7 @@ return () => {
 },[data])
   return (
    <div className="parent relative p-parent2 overflow-hidden max-md:px-[55px] max-md:py-[80px]">
-          <h1 className='teeeeee'>Sefoo</h1>
+          <h1 className='teeeeee dark:stroke-1 dark:stroke-gray-700'>Sefoo</h1>
     <div className="container flex justify-between items-center max-xl:flex-col max-xl:gap-[45px]">
         <div className="text  flex flex-col items-start max-md:items-center max-xl:text-center">
             <h1 className='text-[70px] font-semibold leading-[80px] mb-[5px] max-md:text-[55px] max-md:leading-[60px] max-xl:text-nowrap'>{t("categories_sec").split(" ").slice(0,1).join(" ")} 

@@ -82,7 +82,7 @@ const product:any = useRef(null)
         </div>
         .
          <div className="button flex justify-center items-center mt-[50px]">
-         <Buttons Name={t("all_products")} isfill={true} className='px-[40px] py-[15px] hover:text-black' />
+         <Buttons Name={t("all_products")} isfill={true} className='px-[40px] py-[15px] hover:text-black dark:hover:text-white' />
          </div>
     </div>
     </div>

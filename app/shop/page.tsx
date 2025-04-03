@@ -46,18 +46,20 @@ const prices = Data.map((e:{price:string}) => {
 
 const max = Math.max(...prices)
 const [minPrice, setMinPrice] = useState(10);
-  const [maxPrice, setMaxPrice] = useState(100);
+  const [maxPrice, setMaxPrice] = useState(200);
   const minLimit = 0;
-  const maxLimit = max;
+  const maxLimit = 1500;
 
   const handleMinChange = (e:{target:{value:string}}) => {
     const value = Number(e.target.value);
     if (value < maxPrice) setMinPrice(value);
+    console.log(minPrice)
   };
 
   const handleMaxChange =  (e:{target:{value:string}}) => {
     const value = Number(e.target.value);
     if (value > minPrice) setMaxPrice(value);
+    console.log(maxPrice)
   };
 
   
@@ -292,7 +294,7 @@ const [cart,setCart] = useState([])
   <>
   {rate > 1 ? (
     <>
-    {filtermoney.map((e:any) => (
+    {[...filtermoney , ...filter2].map((e:any) => (
  <Product Title={e.Title} category={e.category} imagesize="w-full" parentsize={"h-[60%]"}  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} id={e.id} key={e.id} />
 ))}
     </>
@@ -300,9 +302,9 @@ const [cart,setCart] = useState([])
     (
       <div className={`products relative ${filter2.length > 0 ? "grid grid-cols-3 max-2xl:grid-cols-1 max-md:grid-cols-2" : "text-center"} gap-[50px] w-full mt-[60px] justify-center  items-center `}>
       <>
-     {filter2.length > 0 ? (
+     {filtermoney.length > 0 ? (
       <>
-      {filter2.map((e:any) => (
+      {filtermoney.map((e:any) => (
         <Product Title={e.Title} imagesize="w-full"  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} key={e.id} />
        ))}
        </>

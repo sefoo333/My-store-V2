@@ -46,12 +46,12 @@ useEffect(() =>{
   <Image src={"/logo2.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
 
 ) : (
-  <Image src={"/logo_black.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
+  <Image src={"/logo2.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
 )}
        {/* <div className="search basis-[70%]">
         <Search />
        </div> */}
-       <ul className={`flex items-center gap-[50px] text-[18px] ${!menuopen ? "max-xl:left-[-500px] max-xl:blur-2xl max-xl:opacity-0 max-xl:z-[-99999999]" : " max-xl:opacity-100 max-xl:blur-none"} max-xl:left-0 max-xl:font-semibold max-xl:flex-col max-xl:justify-center duration-500 max-xl:top-0 max-xl:w-full max-xl:h-full max-xl:text-white max-xl:bg-[#0000008f] max-xl:fixed `}>
+       <ul className={`flex items-center dark:text-white gap-[50px] text-[18px] ${!menuopen ? "max-xl:left-[-500px] max-xl:blur-2xl max-xl:opacity-0 max-xl:z-[-99999999]" : " max-xl:opacity-100 max-xl:blur-none"} max-xl:left-0 max-xl:font-semibold max-xl:flex-col max-xl:justify-center duration-500 max-xl:top-0 max-xl:w-full max-xl:h-full max-xl:text-white max-xl:bg-[#0000008f] max-xl:fixed `}>
           <div className="cancel absolute right-3 hidden max-xl:block top-3" onClick={() => setMenu(!menuopen)}>
 <MdCancel size={35} />
           </div>
@@ -76,7 +76,7 @@ useEffect(() =>{
               </Link>
             </li>
         </ul>
-     <div className="tools flex gap-[20px] items-center">
+     <div className="tools flex gap-[20px] items-center dark:text-white">
      <div className="cart text-[25px] relative cursor-pointer">
         <Link href={"/cart"}>
         <div className="counter flex justify-center items-center text-[12px] w-[20px] h-[20px] p-[5px] bg-yellow-500 rounded-full absolute left-[-10px] top-[-10px]">
