@@ -23,8 +23,7 @@ export const Rates = createContext(true)
 function page() {
 
   const [count,setCount] = useState(1)
-  const params = useParams();
-  const product_id: string = params.product_id as string;
+  const product_id = useParams().product_id;
 
 
 
