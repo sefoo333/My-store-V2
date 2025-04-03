@@ -124,12 +124,12 @@ const { t, i18n } = useTranslation();
     <>
     <Toaster />
     <Navbar className="text-black" />
-<MyRates.Provider value={setWindow}>
+{/* <MyRates.Provider value={setWindow}>
 {rate_window ? (
-      <Rate_window id_product={`${product_id}`} />
+      // <Rate_window id_product={`${product_id}`} />
 
 ) : null}
-</MyRates.Provider>
+</MyRates.Provider> */}
     <div className="parent py-[80px] flex justify-center">
         <div className="container flex flex-col items-center max-xl:px-[5px]">
           {/* breadChumb first page */}
