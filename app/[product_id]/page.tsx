@@ -1,19 +1,19 @@
 "use client"
 import React, { createContext, FC, use, useContext, useEffect, useRef, useState } from 'react'
-import Navbar from '../../_componants/Navbar'
+import Navbar from '../_componants/Navbar'
 import { GoStarFill } from 'react-icons/go'
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaMoneyBillWave } from "react-icons/fa6";
-import Product from '../../_componants/Product'
+import Product from '../_componants/Product'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 import { arrayUnion, collection, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore'
-import { db } from '../../config'
+import { db } from '../config'
 import { IoCheckmarkCircle } from "react-icons/io5";
-import { Provider } from '../../_context/Context'
-import Rate_window from '../../_componants/Rate_window'
+import { Provider } from '../_context/Context'
+import Rate_window from '../_componants/Rate_window'
 import { toast, Toaster } from 'sonner'
 import { useTranslation } from 'react-i18next'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../../_componants/Carsoual'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../_componants/Carsoual'
 import { useParams } from 'next/navigation';
 
 // export const MyRates = createContext(true)
