@@ -8,6 +8,9 @@ import { MdPublic } from "react-icons/md";
 import { IoMdCart } from "react-icons/io";
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { signOut } from 'firebase/auth';
+import { auth } from '../config';
+import { IoLogOut } from "react-icons/io5";
 
 function Sidebar_settings(props:any) {
 
@@ -39,16 +42,6 @@ function Sidebar_settings(props:any) {
                      {t("payment")}
           </Link>
         </li>
-        {/* <li>
-          <a
-            href="#"
-            className=" rounded-lg flex font-semibold text-[16px] items-center  px-4 py-2  text-gray-700"
-          >
-                     <IoMdCart className='mr-[10px]' size={20} /> 
-                     Cart
-          </a>
-        </li> */}
-  
         <li>
           <Link
             href={"/settings/public"}
@@ -57,6 +50,19 @@ function Sidebar_settings(props:any) {
           <MdPublic className='mr-[10px]' size={22} />  {t("public")}
           </Link>
         </li>
+        <li>
+          <a
+            onClick={() => {
+              signOut(auth)
+              window.open("/login","_parent")
+            }}
+            className=" rounded-lg flex cursor-pointer font-semibold text-[16px] items-center  px-4 py-2  text-gray-700"
+          >
+                     <IoLogOut className='mr-[10px]' size={20} /> 
+                     LogOut
+          </a>
+        </li>
+  
   
         {/* <li>
           <details className="group [&_summary::-webkit-details-marker]:hidden">

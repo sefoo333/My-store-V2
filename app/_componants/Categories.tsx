@@ -33,7 +33,7 @@ return () => {
           <h1 className='teeeeee dark:stroke-1 dark:stroke-gray-700'>Sefoo</h1>
     <div className="container flex justify-between items-center max-xl:flex-col max-xl:gap-[45px]">
         <div className="text  flex flex-col items-start max-md:items-center max-xl:text-center">
-            <h1 className='text-[70px] font-semibold leading-[80px] mb-[5px] max-md:text-[35px] max-md:leading-[60px] max-xl:text-nowrap'>{t("categories_sec").split(" ").slice(0,1).join(" ")} 
+            <h1 className='text-[70px] font-semibold leading-[80px] mb-[5px] max-md:text-[35px] max-md:leading-[45px] max-xl:text-nowrap'>{t("categories_sec").split(" ").slice(0,1).join(" ")} 
                 <span className='block'> {t("categories_sec").split(" ").slice(1,3).join(" ")}</span></h1>
             <p className='w-[300px] text-[19px] mb-[25px] text-[#6e6e6e]'>{t("categories_sec_par")}</p>
             <Buttons Name={t("explore")} isfill={true}  className='hover:text-black px-[40px] py-[15px] rounded-md'/>

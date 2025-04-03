@@ -97,7 +97,10 @@ order_name:"Order Name",
 order_par:"Your Order is after Ready To Go to Your Location , usually Take it 2 - 5 days",
 recommend:"Recommend Products",
 review:"Add Review",
-
+landing_head:"Sefoo store is electronic store for buy consoles , PC , phones",
+landing_title:"Upgrade With Sefoo Store",
+shop_button:"Shop Now",
+get_started:"Get Started",
 }
       },
       ar: {
@@ -191,6 +194,10 @@ order_name:"اسم الطلب",
 recommend:"منتجات قد تعجبك",
 order_par:"طلبك رقم يتم تجهيزه الان للوصول لموقع المكتوب , عادة ما يستغرق هذا من يومين الى 5 ايام",
 shop_all:"تصفح جميع المنتجات",
+landing_head:"متجر سيفو هو متجر الكتروني لشراء الاجهزة المنزلية والكمبيوتر والهواتف",
+landing_title:"اكتشف المزيد مع سيفو ستور",
+shop_button:"تصفح المنتجات",
+get_started:"ابدء الان",
 }
       }
     }

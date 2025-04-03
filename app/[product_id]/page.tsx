@@ -15,6 +15,7 @@ import { toast, Toaster } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../_componants/Carsoual'
 import { useParams } from 'next/navigation';
+import Link from 'next/link';
 
 // export const MyRates = createContext(true)
 
@@ -60,7 +61,10 @@ const [isZoomed, setIsZoomed] = useState(false);
     const getData2 = async () => {
     const data2:any =  (await getDocs(collection(db,"products")))
     data2.forEach((e:any) => {
-      data22.push(e.data())
+      data22.push({
+        id:e.id,
+        ...e.data()
+      })
       setData2(data22)
     })
   }
@@ -196,8 +200,8 @@ const { t, i18n } = useTranslation();
             {/* The Head Product */}
             <div className="main mt-[50px] max-xl:flex-col-reverse max-xl:w-fit flex justify-center gap-[50px] flex-row-reverse w-full">
                 <div className="content">
-                <div className="text basis-1/2">
-<h1 className='text-[40px] font-semibold w-[500px] max-xl:w-fit'>{data.Title}</h1>
+                <div className="text basis-1/2  px-[20px]">
+<h1 className='text-[40px] font-semibold w-[500px] max-xl:text-[30px] max-xl:w-fit'>{data.Title}</h1>
 <p className='w-[400px] text-[#120b0b] max-xl:w-fit'>{data.description.split(" ").slice(0,11).join(" ")}</p>
 <div className="rates flex gap-[10px] items-end my-[15px] ">
     <div className="group text-[22px] mt-[10px] flex text-orange-400">
@@ -230,10 +234,9 @@ const { t, i18n } = useTranslation();
       </div>
 </div>
                 </div>
-                <div className="buttons flex gap-[30px] mt-[30px] w-full">
+                <div className="buttons flex gap-[30px] max-xl:gap-[20px] mt-[30px] w-full">
                 <a
-  className=" transition-[0.5s] text-nowrap flex items-center justify-center gap-3 relative rounded-full w-full text-center  border border- bg-[#19376D] px-12 py-4 text-md font-semibold text-white hover:bg-transparent hover:text-[#19376D] focus:ring-3 focus:outline-hidden"
-  href="#"
+  className=" transition-[0.5s] text-nowrap flex items-center justify-center gap-3 relative rounded-full max-xl:px-9  w-full text-center  border border- bg-[#19376D] px-12 py-4 text-md font-semibold text-white hover:bg-transparent hover:text-[#19376D] focus:ring-3 focus:outline-hidden"
   onClick={() => {
     addToCart()
     setDone(true)
@@ -242,16 +245,19 @@ const { t, i18n } = useTranslation();
 >
   {t("add_cart")} {done ? (<IoCheckmarkCircle size={20}  />) : null}
 </a>
-<a
-  className="inline-block text-nowrap transition-[0.5s] rounded-full w-full  text-center border border-[#19376D] px-12 py-4 text-md font-semibold text-[#19376D] hover:bg-[#19376D] hover:text-white focus:ring-3 focus:outline-hidden"
-  href="#"
+<Link
+  className="inline-block text-nowrap transition-[0.5s] rounded-full w-full  text-center border border-[#19376D] px-12 max-xl:px-9 py-4 text-md font-semibold text-[#19376D] hover:bg-[#19376D] hover:text-white focus:ring-3 focus:outline-hidden"
+  href="/checkout"
+  onClick={() => {
+    addToCart()
+  }}
 >
 {t("order")}
-</a>
+</Link>
                 </div>
                 <div className="features my-[40px] p-[20px] gap-[20px] rounded-2xl flex flex-col border-[1px] border-[#ccc]">
 <div className="card flex gap-[30px]  rounded-2xl ">
-<TbTruckDelivery className='text-[40px] text-[#19376D] ' />
+<TbTruckDelivery className='text-[40px] text-[#19376D]' />
 <div className="text">
 <h1 className='text-[25px] font-semibold'>{t("delivery")}</h1>
 <p>{t("delivery_par")}</p>
@@ -274,7 +280,7 @@ const { t, i18n } = useTranslation();
                  <div className="group relative">
                 
                <div className="max-xl:flex max-xl:justify-center max-xl:w-full">
-               <Carousel className='w-[600px] h-[600px] bg-slate-200 rounded-xl max-xl:w-[300px] max-xl:h-[300px]'>
+               <Carousel className='w-[600px] h-[600px] bg-slate-200 rounded-xl max-xl:w-[200px] max-xl:h-[200px]'>
   <CarouselContent className='max-xl:w-fit max-xl:h-fit'>
     {data?.images?.map((e:any , a:number) => (
                  <CarouselItem id={e} key={a}>
@@ -498,8 +504,8 @@ const { t, i18n } = useTranslation();
             <h1 className='font-semibold text-[50px] text-center'>{t("recommend")}</h1>
             <div className={`products relative grid grid-cols-4 gap-[50px] w-full mt-[60px] justify-center  items-center max-xl:grid-cols-1 max-xl:w-fit `}>
   <>
-  {data22.slice(0,4).map((e:any) => (
- <Product Title={e?.Title} category={e?.category} imagesize="w-full"  Description={e?.description} Rate={e.rate} price={e?.price} discount={e?.discount} thumb={e?.image} id={e?.id} key={e?.id} />
+  {data22?.slice(0,4).map((e:any) => (
+ <Product Title={e.Title} category={e.category} imagesize="w-full" parentsize={"h-[60%]"}  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} id={e?.id} key={e?.id} />
 ))}
   </>
             </div>

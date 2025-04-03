@@ -41,7 +41,7 @@ useEffect(() => {
 
 const product:any = useRef(null) 
   return (
-    <div className="parent p-parent2 max-xl:px-[60px] max-xl:py-[30px]">
+    <div className="parent p-parent2 max-xl:px-[60px] max-xl:py-[30px]" id='Our'>
         <div className="container ">
             <div className="main text-center">
             <div className="z-10 flex items-center justify-center ">

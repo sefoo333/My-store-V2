@@ -13,7 +13,7 @@ import { Spotlight } from '@/components/ui/Spotlight';
 import { FaUser } from "react-icons/fa";
 import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, db } from '../config';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 
 interface account {
@@ -39,6 +39,9 @@ function page() {
   const provider2 = new FacebookAuthProvider()
   
   const createAccount = async (data:account) => {
+const getuser = (await getDoc(doc(db,"users" , `${data.uid}`))).data();
+
+   if(!getuser){
     await setDoc(doc(db,"users" , `${data.uid}`) , {
       UserName:data.displayName,
       Email:data.email,
@@ -56,6 +59,7 @@ function page() {
       payments:[],
       price:"",
     })
+   }
   }
   function signinWithGooge() {
     signInWithPopup(auth , provider).then((result:{user:any}) => {
