@@ -5,12 +5,12 @@ import { GoStarFill } from 'react-icons/go'
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaMoneyBillWave } from "react-icons/fa6";
 import Product from '../_componants/Product'
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+import { MdCancel, MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 import { arrayUnion, collection, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore'
 import { db } from '../config'
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { Provider } from '../_context/Context'
-// import Rate_window from '../_componants/Rate_window'
+import Rate_window from '../_componants/Rate_window'
 import { toast, Toaster } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../_componants/Carsoual'
@@ -123,12 +123,18 @@ const { t, i18n } = useTranslation();
     <>
     <Toaster />
     <Navbar className="text-black" />
-{/* <MyRates.Provider value={setWindow}>
-{rate_window ? (
-      <Rate_window id_product={`${product_id}`} />
 
-) : null}
-</MyRates.Provider> */}
+   {rate_window ? (
+     <div className={`window fixed bg-black/30 w-full h-screen  flex justify-center items-center top-0 left-0 z-[99999]`}>
+     <div className="two relative w-[500px] h-[500px] max-xl:w-[340px]">
+     <div onClick={() => setWindow(!rate_window)} className="cancel absolute z-[9999999] right-[16px] top-[10px]">
+      <MdCancel color='black' size={30} />
+    </div>
+  <Rate_window className="" rate_window={rate_window} id_product={`${product_id}`} />
+     </div>
+  
+      </div>
+   ):null}
     <div className="parent py-[80px] flex justify-center">
         <div className="container flex flex-col items-center max-xl:px-[5px]">
           {/* breadChumb first page */}
@@ -364,8 +370,8 @@ const { t, i18n } = useTranslation();
             <h1 className='text-[25px] font-semibold pb-5'>{t("Rate")} </h1>
   <div className="persons overflow-y-scroll h-[550px]">
   {data?.reviews?.map((e:any) => (
-    <div className="person p-[10px]" key={e.Name}>
-    <div className="two flex justify-between">
+    <div className="person max-xl:w-fit p-[15px] bg-gray-50 rounded-2xl" key={e.Name}>
+    <div className="two flex justify-between items-center">
     <div className="profile flex items-center gap-[25px] ">
       <img src={`${e.image}`} alt='' className='w-[50px] h-[50px] object-cover rounded-full' width={200} height={200} />
       <h1 className='text-[20px] font-semibold'>{e.Name}</h1>
@@ -377,7 +383,7 @@ const { t, i18n } = useTranslation();
        }
     </div>
     </div>
-    <div className="the_rate w-[500px] py-[20px]">
+    <div className="the_rate w-[500px] max-xl:w-fit py-[20px]">
       <p>{e.rate_content}</p>
     </div>
     </div>

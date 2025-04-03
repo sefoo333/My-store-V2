@@ -1,5 +1,5 @@
 "use client"
-import React, { createContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Product from '../../_componants/Product'
 import { IoIosArrowForward } from "react-icons/io";
 import {
@@ -19,7 +19,7 @@ import Link from 'next/link';
 import Navbar from '@/app/_componants/Navbar';
 import { useTranslation } from 'react-i18next';
 
-export const t = createContext(null)
+
 
 function page() {
     const paramas = useParams();
