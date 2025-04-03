@@ -271,7 +271,7 @@ const [cart,setCart] = useState([])
              </>
              </div>
          ) : (
-          <div className={`products relative ${filter2.length > 0 ? "grid grid-cols-3 max-2xl:grid-cols-1 max-md:grid-cols-2" : "text-center"} gap-[50px] w-full mt-[60px] justify-center  items-center `}>
+          <div className={`products relative ${filter2.length > 0 ? "grid grid-cols-3 max-xl:grid-cols-1 max-md:grid-cols-2" : "text-center"} gap-[50px] w-full mt-[60px] justify-center  items-center `}>
           <>
          {filter2.length > 0 ? (
           <>
@@ -290,7 +290,7 @@ const [cart,setCart] = useState([])
          </>
 ) : filtermoney.length > 0 ? (
   
-<div className={`products relative grid grid-cols-3 max-md:grid-cols-1 max-2xl:grid-cols-2 gap-[50px] w-full mt-[60px] justify-center  items-center `}>
+<div className={`products relative grid grid-cols-3 max-xl:grid-cols-1 max-2xl:grid-cols-2 gap-[50px] w-full mt-[60px] justify-center  items-center `}>
   <>
   {rate > 1 ? (
     <>
@@ -300,7 +300,7 @@ const [cart,setCart] = useState([])
     </>
   ) : (
     (
-      <div className={`products relative ${filter2.length > 0 ? "grid grid-cols-3 max-2xl:grid-cols-1 max-md:grid-cols-2" : "text-center"} gap-[50px] w-full mt-[60px] justify-center  items-center `}>
+      <div className={`products relative ${filter2.length > 0 ? "grid grid-cols-3 max-xl:grid-cols-1 max-md:grid-cols-2" : "text-center"} gap-[50px] w-full mt-[60px] justify-center  items-center `}>
       <>
      {filtermoney.length > 0 ? (
       <>

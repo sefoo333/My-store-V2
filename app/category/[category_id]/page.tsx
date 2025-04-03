@@ -16,6 +16,8 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/app/config';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import Navbar from '@/app/_componants/Navbar';
+import { useTranslation } from 'react-i18next';
 
 
 function page() {
@@ -77,7 +79,10 @@ function page() {
       setFilterMoney(filter)
       } ,[minPrice,maxPrice])
 
+      const {t} = useTranslation()
   return (
+    <>
+    <Navbar />
  <div className="parent flex justify-center py-[70px]">
     <div className="container flex flex-col items-center justify-center">
     <div className="breadChamb w-full mb-[40px]">
@@ -146,7 +151,7 @@ function page() {
             </div>
     <div className="head_shop p-[80px] w-[1200px] text-[#333d48] rounded-[20px] bg-linear-[(--shop)] flex flex-col items-center">
 
-<span className="text-blue-500 font-semibold text-xl">Category</span>
+<span className="text-blue-500 font-semibold text-xl">{t("cart_category")}</span>
 <h1 className='text-[65px] font-semibold text-center'>{id}</h1>
 {/* <p className='w-[500px] text-[18px] text-center text-[#757585]'>There are a many products you can buy any things likes laptop and you will enjoy it</p> */}
 <div className="button mt-[25px]">
@@ -154,7 +159,7 @@ function page() {
   className="inline-block rounded-sm border border-blue-600 bg-blue-600 px-12 py-3 text-[16px] font-medium text-white duration-300 hover:bg-blue-700 focus:ring-3 focus:outline-hidden"
   href="/shop"
 >
-  Shop All Products
+  {t("shop_all")}
 </Link>
 
 </div>
@@ -168,7 +173,7 @@ function page() {
 
 {/* filter by price */}
 <div className="filter_money">
-<h1 className='text-[25px] w-[80%] font-semibold  pb-[5px] border-b-[1px] border-b-[#ccc] '>price</h1>
+<h1 className='text-[25px] w-[80%] font-semibold  pb-[5px] border-b-[1px] border-b-[#ccc] '>{t("price")}</h1>
 <div className="group w-[275px]">
 <div className="two grid relative mt-[20px] w-full">
   <input min={minLimit} max={maxLimit} value={minPrice} onChange={handleMinChange} type="range" className='tt col-span-2 rows-grid-2 z-10 relative' name="" id="" />
@@ -192,7 +197,7 @@ function page() {
 
 {/* Rate */}
 <div className="rate mt-[40px]">
-<h1 className='text-[25px] font-semibold w-[80%] pb-[5px] border-b-[1px] border-b-[#ccc] '>Rate</h1>
+<h1 className='text-[25px] font-semibold w-[80%] pb-[5px] border-b-[1px] border-b-[#ccc] '>{t("Rate")}</h1>
 
 <Select onValueChange={(e) => {
   setRate(+e)
@@ -336,6 +341,7 @@ function page() {
         </div>
     </div>
  </div>
+ </>
   )
 }
 

@@ -11,7 +11,7 @@ import {
   } from "@/components/ui/select"
 import { GoStarFill } from 'react-icons/go'
 import { IoIosLogIn } from "react-icons/io";
-import { MyRates } from '../[product_id]/page';
+import { MyRates } from '../products/[product_id]/page';
 import { Provider } from '../_context/Context';
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore';

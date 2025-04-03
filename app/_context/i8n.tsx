@@ -25,7 +25,7 @@ add_cart:"Add to cart",
     return_par:"ou can return the price after 15 deys , Show Detiles",
 users_review:"Review Users",
 order:"Order Now",
-
+shop_all:"Shop All Products",
 Home_Nav:"Home",
 About_Nav:"About",
 Shop_Nav:"Shop",
@@ -189,7 +189,8 @@ order_coming:"طلبك قيد التجهيز للوصول لك !",
 total_price_tax:"اجمال المبلغ (مع ضريبة 20%)",
 order_name:"اسم الطلب",
 recommend:"منتجات قد تعجبك",
-order_par:"طلبك رقم يتم تجهيزه الان للوصول لموقع المكتوب , عادة ما يستغرق هذا من يومين الى 5 ايام"
+order_par:"طلبك رقم يتم تجهيزه الان للوصول لموقع المكتوب , عادة ما يستغرق هذا من يومين الى 5 ايام",
+shop_all:"تصفح جميع المنتجات",
 }
       }
     }
