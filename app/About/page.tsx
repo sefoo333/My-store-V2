@@ -63,17 +63,17 @@ My Name is seifeldeen Ali, I Enthusiastic and detail-oriented Frontend Developer
 </div>
 <div className="socials mt-[30px] flex gap-[20px]">
     <div className="github rounded-full p-[10px] bg-slate-900">
-        <a href="#">
+        <a href="https://github.com/sefoo333">
             <FaGithub size={30} />
         </a>
     </div>
     <div className="github rounded-full p-[10px] bg-blue-400">
-        <a href="#">
+        <a href="https://www.linkedin.com/in/sefoo333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
             <FaLinkedin size={30} />
         </a>
     </div>
     <div className="github rounded-full p-[10px] bg-red-500">
-        <a href="#">
+        <a href="https://youtube.com/@seif333?si=ORLGgSS49bHVtDvU">
             <FaYoutube size={30} />
         </a>
     </div>
