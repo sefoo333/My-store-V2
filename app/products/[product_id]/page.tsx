@@ -64,10 +64,8 @@ const [isZoomed, setIsZoomed] = useState(false);
       setData2(data22)
     })
   }
-    return () => {
       getData()
       getData2()
-    }
   },[])
 console.log(data)
 
