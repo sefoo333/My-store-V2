@@ -300,7 +300,6 @@ const [cart,setCart] = useState([])
     </>
   ) : (
     (
-      <div className={`products relative ${filter2.length > 0 ? "grid grid-cols-3 max-xl:grid-cols-1 max-md:grid-cols-2" : "text-center"} gap-[50px] w-full mt-[60px] justify-center  items-center `}>
       <>
      {filtermoney.length > 0 ? (
       <>
@@ -314,7 +313,6 @@ const [cart,setCart] = useState([])
     </div>
      )}
       </>
-      </div>
      )
   )}
   </>
