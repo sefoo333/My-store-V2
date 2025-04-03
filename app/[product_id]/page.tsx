@@ -24,7 +24,7 @@ function page() {
 
   const [count,setCount] = useState(1)
   const params = useParams();
-  const product_id = params.product_id;
+  const product_id: string = params.product_id as string;
 
 
 
