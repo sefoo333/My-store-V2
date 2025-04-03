@@ -11,7 +11,7 @@ import Partnar_sec from "./_componants/partenar_sec";
 export default function Home() {
   return (
     <div className="parent flex flex-col max-xl:gap-[100px]">
-      <Navbar className="text-white absolute max-xl:absolute max-xl:w-full" white={true} />
+      <Navbar className="text-white absolute max-xl:absolute max-xl:w-full" white={true} classParent={"max-xl:absolute max-xl:w-full"} />
       <Landing />
       <Our />
       <Categories />

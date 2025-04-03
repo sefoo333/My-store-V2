@@ -39,7 +39,7 @@ useEffect(() =>{
 
   const [menuopen , setMenu] = useState(false)
   return (
-   <div className="parent flex justify-center shadow relative z-20 ">
+   <div className={"parent flex justify-center shadow relative z-20 " + ` ${props?.classParent}`}>
      <div className={`container  flex  justify-between items-center py-[25px] px-[30px] max-xl:flex-row  ${props.className}`}>
      {/* <h1 className='text-[25px] font-semibold'>Sefoo Store</h1> */}
 {props.white ? (
