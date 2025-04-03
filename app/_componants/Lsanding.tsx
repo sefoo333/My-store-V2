@@ -24,10 +24,12 @@ function Landing() {
         Sefoo Store
       </BlurFade>
     </h1>
-            <p className='text-[19px] w-[450px] max-md:w-fit pb-[40px] text-[#e6e5e5fa] '>Sefoo store is electronic store for buy consoles , PC , phones</p>
-           <div className="buttons flex gap-[30px] max-md:text-nowrap">
-           <Buttons Name="Get Started" className="px-[40px] py-[15px]" isfill={true} />
-           <Buttons Name="Shop Now" className="px-[40px] py-[15px]" isfill={false} />
+<div className="par flex justify-center">
+<p className='text-[19px] max-xl:w-[80%] w-[450px] pb-[40px] text-[#e6e5e5fa] '>Sefoo store is electronic store for buy consoles , PC , phones</p>
+</div>
+           <div className="buttons flex gap-[30px] max-md:text-nowrap max-xl:w-fit">
+           <Buttons Name="Get Started" className="px-[40px] py-[15px] max-xl:px-[30px]" isfill={true} />
+           <Buttons Name="Shop Now" className="px-[40px] py-[15px] max-xl:px-[30px]" isfill={false} />
            </div>
         </div>
 <BlurFade delay={2.50} inView>

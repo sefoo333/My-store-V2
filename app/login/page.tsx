@@ -79,7 +79,6 @@ const rememberaccount = onAuthStateChanged(auth , (user) => {
     setTimeout(() => window.open("/" , "_parent") , 3000)
   }
 })
-document.body.style.overflowY ="hidden"
   },[])
 
   const [email,setEmail] = useState("")
@@ -127,15 +126,15 @@ const [reset,SetReset] = useState(false)
   return (
     <>
     
-  <div className="parent p-[100px] h-screen flex justify-center max-xl:px-[30px] max-xl:py-[50px]">
+ <div className="parent p-[100px] h-screen overflow-hidden overflow-y-scroll flex justify-center max-xl:px-[40px] max-xl:py-[50px]">
     <div className="container flex h-full justify-between max-xl:flex-col max-xl:w-fit max-xl:h-screen">
-      <div className="text basis-[35%]">
+      <div className="text xl:basis-[35%]">
         <div className="title font-semibold text-[55px] text-white">
           {/* <h1>Sefoo Store</h1> */}
 <Image src={"/logo2.png"} width={300} height={100} alt='' className='h-[55px] object-cover' />
         </div>
-        <div className="login mt-[60px] text-white">
-          <h1 className='font-semibold text-[28px] pb-[35px]'> {!register ? "Login to" : "Register"} Your Account</h1>
+        <div className="login mt-[60px] text-white max-xl:px-[10px]">
+          <h1 className='font-semibold text-[28px] pb-[35px] max-xl:text-[24px]'> {!register ? "Login to" : "Register"} Your Account</h1>
        {!reset ? (
            <form action="" onSubmit={((e) => {
             e.preventDefault()
@@ -155,7 +154,7 @@ const [reset,SetReset] = useState(false)
      id="userName"
  onChange={(e) => setUserName(e.target.value)}
      placeholder="UserName"
-     className="mt-1 pl-[48px] w-full rounded-md p-4 shadow-xs sm:text-sm border-gray-700 bg-[#313131] text-[#b7b7b7]"
+     className="mt-1 pl-[48px] max-xl:w-[95%] xl:w-full rounded-md p-4 shadow-xs sm:text-sm border-gray-700 bg-[#313131] text-[#b7b7b7]"
    />        
  <FaUser className='text-[25px] absolute left-[10px] bottom-[13px]' />
               </div>
@@ -173,7 +172,7 @@ const [reset,SetReset] = useState(false)
 
 
     placeholder="Your Email"
-    className="mt-1 pl-[48px] w-full rounded-md p-4 shadow-xs sm:text-sm border-gray-700 bg-[#313131] text-[#b7b7b7]"
+    className="mt-1 pl-[48px] max-xl:w-[95%] xl:w-full rounded-md p-4 shadow-xs sm:text-sm border-gray-700 bg-[#313131] text-[#b7b7b7]"
   />        
 <MdEmail className='text-[25px] absolute left-[10px] bottom-[13px]' />
              </div>
@@ -189,7 +188,7 @@ const [reset,SetReset] = useState(false)
     onChange={(e) => setPassword(e.target.value)}
 
     placeholder="Your password"
-    className="mt-1 w-full pl-[48px] rounded-md p-4 shadow-xs sm:text-sm border-gray-700 bg-[#313131] text-[#b7b7b7]"
+    className="mt-1 xl:w-full pl-[48px] rounded-md p-4 max-xl:w-[95%] shadow-xs sm:text-sm border-gray-700 bg-[#313131] text-[#b7b7b7]"
   />
 
 <span className='bg-clip-text button' style={{WebkitTextFillColor:"transparent"}}>
@@ -210,12 +209,14 @@ const [reset,SetReset] = useState(false)
               </div>
             </div>
           ) : null}
-{register ?             <input type="submit" value="Register" className='w-full py-[12px] button_login text-black rounded-xl text-2xl font-semibold cursor-pointer mt-[30px]' /> :             <input type="submit" value="Login" className='w-full py-[12px] button_login text-black rounded-xl text-2xl font-semibold cursor-pointer' />
+<div className="submit flex justify-center items-center">
+{register ?             <input type="submit" value="Register" className='w-full py-[12px] max-xl:w-[95%] button_login text-black rounded-xl text-2xl font-semibold cursor-pointer mt-[30px]' /> :             <input type="submit" value="Login" className='xl:w-full max-xl:w-[95%] py-[12px] button_login text-black rounded-xl text-2xl font-semibold cursor-pointer' />
 }
+</div>
           </form>
        ) : (
-        <form action="" >             
-          <div className="email flex flex-col gap-[15px]">
+        <form action=""  className='max-xl:flex max-xl:flex-col max-xl:items-start'>             
+          <div className="email flex flex-col gap-[15px] max-xl:w-full">
             <label htmlFor="email" className='font-medium text-[18px]'>Your Email</label>
            
            <div className="input relative">
@@ -226,7 +227,7 @@ const [reset,SetReset] = useState(false)
 
 
   placeholder="Your Email"
-  className="mt-1 pl-[48px] w-full rounded-md p-4 shadow-xs sm:text-sm border-gray-700 bg-[#313131] text-[#b7b7b7]"
+  className="mt-1 pl-[48px] w-full max-xl:w-[95%] rounded-md p-4 shadow-xs sm:text-sm border-gray-700 bg-[#313131] text-[#b7b7b7]"
 />        
 <MdEmail className='text-[25px] absolute left-[10px] bottom-[13px]' />
            </div>
@@ -244,7 +245,10 @@ const [reset,SetReset] = useState(false)
             </div>
           </div>
         ) : null}
- <input type="submit" value="Send" className='w-full py-[12px] button_login text-black rounded-xl text-2xl font-semibold cursor-pointer mt-[30px]' /> 
+<div className="submit flex justify-center items-center max-xl:w-full">
+<input type="submit" value="Send" className='w-full py-[12px] button_login max-xl:w-[95%] text-black rounded-xl text-2xl font-semibold cursor-pointer mt-[30px]' /> 
+
+</div>
         </form>
        )}
 
@@ -291,7 +295,7 @@ const [reset,SetReset] = useState(false)
       */}
     </div>
   </div>
-      <div className="absolute h-full w-full left-0 top-0  overflow-hidden bg-[#0f0f0f] z-[-1]">
+      <div className="absolute h-screen w-full left-0 top-0  overflow-hidden bg-[#0f0f0f] z-[-1]">
       <Spotlight
         className="-top-40 left-0 md:-top-20 md:left-60 z-[-1] "
         fill="white"

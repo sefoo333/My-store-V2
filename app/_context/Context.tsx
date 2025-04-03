@@ -87,8 +87,8 @@ const [lang , setLang] = useState("")
     </div>
 <Provider.Provider value={value}>
 {children}
-<Footer />
-<button onClick={() => signOut(auth)}>sign out</button>
+{/* <Footer /> */}
+{/* <button onClick={() => signOut(auth)}>sign out</button> */}
 </Provider.Provider>
 </div>
    </>
