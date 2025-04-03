@@ -44,7 +44,7 @@ const [open,setOpen]:any = useState(false)
               <div onClick={() => {
                              data ? window.open("/login" , "_parent") : null
                            }} className="card cursor-pointer duration-300 justify-center hover:bg-gray-100 w-full p-[20px] text-[18px] font-medium flex items-center gap-[20px] rounded-[20px] border-[1px] border-[#ccc]">
-             {data ? <IoIosLogIn size={30} /> :  <IoIosCheckmarkCircle size={30} />}
+             {data ? <IoIosCheckmarkCircle size={30} /> :  <IoIosLogIn size={30} />}
              <h1>{data ? "LogedIn" : "LogIn Now !"}</h1>
                            </div>
          </div>
@@ -126,7 +126,7 @@ const [open,setOpen]:any = useState(false)
  </div>
  
  <div className="submit flex gap-[30px] justify-end">
- <a
+ {/* <a
    className="inline-block rounded-sm border bg-slate-50 border-[#ccc] px-8 py-3 text-sm font-medium text-black hover:bg-red-500 hover:text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
    href="#"
    onClick={() => {
@@ -134,7 +134,7 @@ const [open,setOpen]:any = useState(false)
    }}
  >
    Cancel
- </a>
+ </a> */}
  <input
    className="inline-block rounded-sm bg-slate-50 px-8 py-3 text-sm font-medium text-black border-[#ccc] border-[1px] transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
    value={"Send"}
