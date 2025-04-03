@@ -46,7 +46,7 @@ useEffect(() =>{
   <Image src={"/logo2.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
 
 ) : (
-  <Image src={"/logo2.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
+  <Image src={"/logo_black.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
 )}
        {/* <div className="search basis-[70%]">
         <Search />

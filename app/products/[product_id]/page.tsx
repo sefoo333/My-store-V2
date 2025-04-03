@@ -20,11 +20,10 @@ import { useParams } from 'next/navigation';
 
 
 
-function page() {
+function page({params}:any) {
 
   const [count,setCount] = useState(1)
-  const params = useParams();
-  const product_id = params.product_id;
+  const {product_id}:any = use(params);
 
 const [isZoomed, setIsZoomed] = useState(false);
   const imgRef:any = useRef(null);
