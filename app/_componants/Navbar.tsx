@@ -6,10 +6,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Provider } from '../_context/Context';
 import { doc, onSnapshot } from 'firebase/firestore';
-import { db } from '../config';
+import { auth, db } from '../config';
 import { IoMenu } from "react-icons/io5";
 import { MdCancel } from "react-icons/md";
 import { useTranslation } from 'react-i18next';
+import { signOut } from 'firebase/auth';
 
 function Navbar(props:any) {
   const data:any = useContext(Provider)
@@ -42,12 +43,14 @@ useEffect(() =>{
    <div className={"parent flex justify-center shadow relative z-20 " + ` ${props?.classParent}`}>
      <div className={`container  flex  justify-between items-center py-[25px] px-[30px] max-xl:flex-row  ${props.className}`}>
      {/* <h1 className='text-[25px] font-semibold'>Sefoo Store</h1> */}
+<Link href={"/"}>
 {props.white ? (
   <Image src={"/logo2.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
 
 ) : (
   <Image src={"/logo_black.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
 )}
+</Link>
        {/* <div className="search basis-[70%]">
         <Search />
        </div> */}
@@ -74,6 +77,17 @@ useEffect(() =>{
               <Link href={"/contact"}>
               {t("Contact_Nav")}
               </Link>
+            </li>
+            <li className='transition-[0.5s] cursor-pointer hover:text-gray-200 max-xl:block xl:hidden'>
+              <Link href={"/settings/profile"}>
+              My Account
+              </Link>
+            </li>
+            <li onClick={() => {
+              signOut(auth)
+            }} className='transition-[0.5s] cursor-pointer hover:text-gray-200 max-xl:block xl:hidden'>
+              
+              Log Out
             </li>
         </ul>
      <div className="tools flex gap-[20px] items-center dark:text-white">

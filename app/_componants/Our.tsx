@@ -57,7 +57,9 @@ const product:any = useRef(null)
       </div>
     </div>
     
-                <h1 className='font-semibold text-[60px] max-md:text-5xl  max-md:mt-[10px] text-nowrap'>{t("our")}</h1>
+<div className="h1 flex justify-center">
+<h1 className='font-semibold text-[60px] max-xl:text-[35px]  max-md:mt-[10px] text-nowrap'>{t("our")}</h1>
+</div>
             </div>
             <div className="panel relative w-full">
 

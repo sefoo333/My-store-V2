@@ -64,7 +64,7 @@ const {t} = useTranslation();
           <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </AnimatedShinyText>
         </div>
-            <h1 className='text-[60px] font-semibold  leading-[80px] mb-[15px] text-nowrap max-md:text-[40px] max-md:leading-[50px] max-md:text-center'>{t("partner").split(" ").slice(0,3).join(" ")}
+            <h1 className='text-[60px] font-semibold  leading-[80px] mb-[15px] text-nowrap max-md:text-[35px] max-md:leading-[45px] max-md:text-center'>{t("partner").split(" ").slice(0,3).join(" ")}
                 <span className='block'> {t("partner").split(" ").slice(3,7).join(" ")}</span></h1>
             <p className='w-[300px] text-[19px] mb-[25px] text-[#6e6e6e]'>{t("partner_par")}</p>
             {/* <Buttons Name='Explore Now' isfill={true}  className='hover:text-black px-[40px] py-[15px] rounded-md'/> */}
