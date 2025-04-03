@@ -42,7 +42,7 @@ const [open,setOpen]:any = useState(false)
      <h1 className='text-center font-semibold text-[30px] mb-[30px]'>Rate Product 😀</h1>
          <div className="button ">
               <div onClick={() => {
-                             data ? window.open("/login" , "_parent") : null
+                             !data ? window.open("/login" , "_parent") : null
                            }} className="card cursor-pointer duration-300 justify-center hover:bg-gray-100 w-full p-[20px] text-[18px] font-medium flex items-center gap-[20px] rounded-[20px] border-[1px] border-[#ccc]">
              {data ? <IoIosCheckmarkCircle size={30} /> :  <IoIosLogIn size={30} />}
              <h1>{data ? "LogedIn" : "LogIn Now !"}</h1>
