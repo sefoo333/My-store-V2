@@ -10,7 +10,7 @@ import { arrayUnion, collection, doc, getDoc, getDocs, updateDoc } from 'firebas
 import { db } from '../config'
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { Provider } from '../_context/Context'
-import Rate_window from '../_componants/Rate_window'
+// import Rate_window from '../_componants/Rate_window'
 import { toast, Toaster } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../_componants/Carsoual'
@@ -19,7 +19,6 @@ import Link from 'next/link';
 
 
 
-export let MyRates:any = createContext(null)
 
 function page({params}:any) {
 
@@ -124,12 +123,12 @@ const { t, i18n } = useTranslation();
     <>
     <Toaster />
     <Navbar className="text-black" />
-<MyRates.Provider value={setWindow}>
+{/* <MyRates.Provider value={setWindow}>
 {rate_window ? (
       <Rate_window id_product={`${product_id}`} />
 
 ) : null}
-</MyRates.Provider>
+</MyRates.Provider> */}
     <div className="parent py-[80px] flex justify-center">
         <div className="container flex flex-col items-center max-xl:px-[5px]">
           {/* breadChumb first page */}
