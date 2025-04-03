@@ -14,7 +14,6 @@ import Rate_window from '../_componants/Rate_window'
 import { toast, Toaster } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../_componants/Carsoual'
-import { useParams } from 'next/navigation';
 
 export const Rates = createContext(true)
 
