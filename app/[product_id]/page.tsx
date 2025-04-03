@@ -17,7 +17,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
-export const MyRates = createContext(null)
+export const MyRates:any = createContext(null)
 
 
 
