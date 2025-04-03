@@ -1,5 +1,5 @@
 "use client"
-import React, { createContext, use, useContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, FC, use, useContext, useEffect, useRef, useState } from 'react'
 import Navbar from '../_componants/Navbar'
 import { GoStarFill } from 'react-icons/go'
 import { TbTruckDelivery } from "react-icons/tb";
@@ -14,85 +14,17 @@ import Rate_window from '../_componants/Rate_window'
 import { toast, Toaster } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../_componants/Carsoual'
+import { useParams } from 'next/navigation';
 
 export const Rates = createContext(true)
 
-function page({params}:any) {
-  const {product_id}:any = use(params)
+
+
+function page() {
+
   const [count,setCount] = useState(1)
-  const products:any = [{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:20,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:false,
-  id:1
-},
-{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:0,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:true,
-  id:2
-},
-{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:0,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:false,
-  id:3
-},
-{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:0,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:false,
-  id:4
-},
-{
-    Title:"Laptop HD GTX 1080",
-    Description:"loream loream loream loream  lorema",
-    Rate:5,
-    price:200,
-    discont:0,
-    Default:"USD",
- thumb:"/laptop.png",
-   images:["/laptop.png"],
-  Reviews:0,
-  changeable:false,
-  id:5
-},
-
-
-
-
-
-]
-const product:any = useRef(null) 
-
+  const params = useParams();
+  const product_id = params.product_id;
 
 
 
@@ -121,7 +53,7 @@ const [isZoomed, setIsZoomed] = useState(false);
   const [data22, setData2]:any = useState([])
   useEffect(() => {
     const getData = async () => {
-    const data2:any =  (await getDoc(doc(db,"products" , product_id))).data();
+    const data2:any =  (await getDoc(doc(db,"products" , `${product_id}`))).data();
     console.log(data)
     setData({
       id:product_id,
@@ -195,7 +127,7 @@ const { t, i18n } = useTranslation();
     <Navbar className="text-black" />
 <Rates.Provider value={setWindow}>
 {rate_window ? (
-      <Rate_window id_product={product_id} />
+      <Rate_window id_product={`${product_id}`} />
 
 ) : null}
 </Rates.Provider>
