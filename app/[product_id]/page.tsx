@@ -20,10 +20,10 @@ export const Rates = createContext(true)
 
 
 
-function page() {
+function page({params}:any) {
 
   const [count,setCount] = useState(1)
-  const product_id = useParams().product_id;
+  const { product_id }:any = use(params);
 
 
 
