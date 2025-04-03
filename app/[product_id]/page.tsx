@@ -1,5 +1,4 @@
 "use client"
-import Image from 'next/image'
 import React, { createContext, use, useContext, useEffect, useRef, useState } from 'react'
 import Navbar from '../_componants/Navbar'
 import { GoStarFill } from 'react-icons/go'
@@ -474,16 +473,13 @@ const { t, i18n } = useTranslation();
   <div className="range flex justify-between gap-[50px] max-xl:justify-start max-xl:gap-[20px]">
     <h1 className='font-semibold'>5 Rates</h1>
 
-    <div>
-  <span
+    <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "5").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>
   </span>
-</div>
 
 <h1>{((data?.reviews?.filter((e:any) => e.rate_nums === "5").length / data?.reviews?.length) * 100).toFixed()}%</h1>
   </div>
@@ -495,7 +491,6 @@ const { t, i18n } = useTranslation();
   <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "4").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>
@@ -512,7 +507,6 @@ const { t, i18n } = useTranslation();
   <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "3").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>
@@ -529,7 +523,6 @@ const { t, i18n } = useTranslation();
   <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "2").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>
@@ -546,7 +539,6 @@ const { t, i18n } = useTranslation();
   <span
     role="progressbar"
     aria-labelledby="ProgressLabel"
-    aria-valuenow="75"
     className="block rounded-md bg-gray-200 w-[300px] max-xl:w-[200px]"
   >
     <span className="block h-6 rounded-md bg-[#576CBC]" style={{width:`${((data?.reviews?.filter((e:any) => e.rate_nums === "1").length / data?.reviews?.length) * 100).toFixed()}%`}}></span>
