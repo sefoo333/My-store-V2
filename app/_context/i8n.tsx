@@ -7,10 +7,6 @@ i18n
 .use(LanguageDetector) // اكتشاف لغة المتصفح تلقائيًا
   .init({
     fallbackLng: 'en', // اللغة الافتراضية
-    detection: {
-        order: [ 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
-        cache:["cookie"]
-      },
     resources: {
       en: {
         translation: {

@@ -18,11 +18,6 @@ export default function Home() {
       <Partnar_sec />
       <Top />
       <Thanks />
-      {/* <div className="upgrade bg-amber-100 w-full py-[30px] text-center flex justify-center items-center flex-col">
-        <h1 className="text-[60px] font-semibold w-[650px]">Get Started Now With Sefoo Store</h1>
-        <p className="text-[20px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae blanditiis quo sequi quod, atque ad. Maiores autem ex modi enim,</p>
-        
-      </div> */}
     </div>
   );
 }

@@ -11,7 +11,7 @@ import {
   } from "@/components/ui/select"
 import { GoStarFill } from 'react-icons/go'
 import { IoIosLogIn } from "react-icons/io";
-import { Rates } from '../[product_id]/page';
+import { MyRates } from '../[product_id]/page';
 import { Provider } from '../_context/Context';
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore';
@@ -19,7 +19,7 @@ import { db } from '../config';
 
 function Rate_window(props:{id_product:string}) {
 
-    const setWindow:any = useContext(Rates)
+    const setWindow:any = useContext(MyRates)
     const [close,setClosed] = useState(false)
 
 

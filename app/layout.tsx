@@ -27,11 +27,6 @@ export default function RootLayout({
 }>) 
 {
 
-  
-
-  
-
-
   return (
     <html lang="ar">
       <body

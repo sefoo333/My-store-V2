@@ -71,7 +71,7 @@ const all = (total + Tax ) - Discount
       </tr>
     </thead>
 
-    <tbody className="divide-y divide-gray-200">
+    <tbody className="divide-y divide-gray-200 dark:*:text-white">
     
   {
     cart?.map((e:any) =>(

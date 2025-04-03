@@ -39,8 +39,8 @@ return () => {
             <Buttons Name={t("explore")} isfill={true}  className='hover:text-black px-[40px] py-[15px] rounded-md'/>
         </div>
         <div className="images grid grid-cols-2 gap-[10px] max-xl:grid-cols-1">
-           <Link href={"/"} className='big-cate w-full h-[220px]'>
-           <Image src={"/category/headphone"} alt='' width={400} height={400} className='cate h-full w-full rounded-xl object-cover' />
+           <Link href={"/category/headphone"} className='big-cate w-full h-[220px]'>
+           <Image src={"/headphone.jpg"} alt='' width={400} height={400} className='cate h-full w-full rounded-xl object-cover' />
            <div className="text">
             <h1>Headphones</h1>
             <p>{cateogries?.filter((e:any) => e.category.toLowerCase() === "headphone").length} {t("products")}</p>
@@ -55,7 +55,7 @@ return () => {
             <span  className='explore flex items-center gap-[5px] text-white'>{t("explore")} <FaLongArrowAltRight /></span>
            </div>
 </Link>           
-<Link href={"/"} className='big-cate md:col-span-2 w-full h-[400px] max-md:h-[220px]'>
+<Link href={"/category/laptop"} className='big-cate md:col-span-2 w-full h-[400px] max-md:h-[220px]'>
 <Image src={"/laptopview.jpg"} alt='' width={400} height={400} className='cate h-full w-full rounded-xl object-cover' />
 <div className="text">
             <h1 className='text-[60px]'>Laptop</h1>
@@ -63,7 +63,7 @@ return () => {
             <span  className='explore flex items-center gap-[5px] text-white'>{t("explore")} <FaLongArrowAltRight /></span>
            </div>
 </Link>
-<Link href={"/"} className='big-cate w-full h-[220px]'>
+<Link href={"/category/console"} className='big-cate w-full h-[220px]'>
 <Image src={"/console.jpg"} alt='' width={400} height={400} className='cate h-full w-full rounded-xl object-cover' />
 <div className="text">
             <h1>Console</h1>
@@ -71,7 +71,7 @@ return () => {
             <span  className='explore flex items-center gap-[5px] text-white'>{t("explore")} <FaLongArrowAltRight /></span>
            </div>
 </Link>
-<Link href={"/"} className='big-cate w-full h-[220px]'>
+<Link href={"/category/phone"} className='big-cate w-full h-[220px]'>
 <Image src={"/phone.png"} alt='' width={400} height={400} className='cate h-full w-full rounded-xl object-cover' />
 <div className="text">
             <h1>Phone</h1>

@@ -55,11 +55,12 @@ const [lang , setLang] = useState("")
         },[])
 
 
+   
 
         useEffect(() => {
           // NOTE: This should be set based on some kind of toggle or theme selector.
           // I've added this here for demonstration purposes
-          localStorage.setItem("theme", "dark");
+          localStorage.setItem("theme", "light");
       
           // If the user has selected a theme, use that
           const selectedTheme = localStorage.getItem("theme");
@@ -78,17 +79,19 @@ const [lang , setLang] = useState("")
         }, []);
 
         return (
+   <>
       <div  className={`${value?.lang === "ar" ? `${geistSans.className}` : ""} antialiased`}>
-          <div className="loader fixed dark:text-black flex-col-reverse w-full h-full flex justify-center items-center bg-slate-100 left-0 top-0 z-[9999999999999999999999999999999] animate-end-sec">
-          <div className="cube"></div>
-          <h1 className="font-[800] text-[100px] animate-pre-start max-xl:text-[50px]">Sefoo Store</h1>
-        </div>
-    <Provider.Provider value={value}>
-   {children}
-   <Footer />
-   <button onClick={() => signOut(auth)}>sign out</button>
-    </Provider.Provider>
+      <div className="loader fixed dark:text-black flex-col-reverse w-full h-full flex justify-center items-center bg-slate-100 left-0 top-0 z-[9999999999999999999999999999999] animate-end-sec">
+      <div className="cube"></div>
+      <h1 className="font-[800] text-[100px] animate-pre-start max-xl:text-[50px]">Sefoo Store</h1>
     </div>
+<Provider.Provider value={value}>
+{children}
+<Footer />
+<button onClick={() => signOut(auth)}>sign out</button>
+</Provider.Provider>
+</div>
+   </>
   )
 }
 

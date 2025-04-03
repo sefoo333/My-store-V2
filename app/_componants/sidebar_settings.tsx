@@ -9,13 +9,13 @@ import { IoMdCart } from "react-icons/io";
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
-function Sidebar_settings() {
+function Sidebar_settings(props:any) {
 
 
   const {t} = useTranslation();
 
   return (
-    <div className="flex h-screen flex-col justify-between border-e border-gray-100 bg-white max-xl:hidden">
+    <div className={`flex h-screen max-xl:z-[9999999] flex-col justify-between border-e border-gray-100 bg-white  duration-500  max-xl:w-full max-xl:fixed max-xl:flex  max-xl:h-full ${!props.on ? "max-xl:opacity-100 max-xl:left-0" : "max-xl:opacity-0 max-xl:left-[-1000px]"}`}>
     <div className="px-4 py-6">
   <Image src={"/logo_black.png"} alt='' width={300} height={100} className='h-[55px] object-cover' />
   

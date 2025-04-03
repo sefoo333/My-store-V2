@@ -82,6 +82,10 @@ function page() {
         setTotal(totaly)
         setCart(doc.data().cart)
 
+        if(cart.length === 0){
+          window.open("/cart" , "_parent")
+        }
+
         if (doc.data().payments.length === 0){
           setIndex(1)
         }

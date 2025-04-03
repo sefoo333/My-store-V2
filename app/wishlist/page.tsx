@@ -63,10 +63,10 @@ const {t} = useTranslation();
 
 <div className="cart w-[70%] max-xl:w-[92%]">
 <div className="overflow-x-auto rounded-lg border border-gray-200">
-  <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+<table className="min-w-full divide-y-2 divide-gray-200 dark:divide-gray-700">
     <thead className="ltr:text-left rtl:text-right">
-      <tr>
-        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("cart_title")}</th>
+    <tr className="*:font-medium *:text-gray-900 dark:*:text-white">
+    <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("cart_title")}</th>
         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("cart_category")}</th>
         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("cart_price")}</th>
         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{t("action")}</th>
@@ -78,8 +78,8 @@ const {t} = useTranslation();
    {wishlist?.map((e:any) => (
       <tr key={e.id}>
     
-        <td className="whitespace-nowrap px-5 pr-[35px] py-2 text-gray-700  flex items-center gap-[30px]">
-        <img src={e.image} className='aspect-square rounded-xl object-contain  w-[10%]' alt='' width={300} height={300} />
+    <td className="whitespace-nowrap px-7 pr-9 py-2 text-gray-700  flex items-center gap-[30px] dark:*:text-white">
+    <img src={e.image} className='aspect-square rounded-xl object-contain  w-[10%]' alt='' width={300} height={300} />
         <h1 className='font-semibold'>{e.Title}</h1>
         </td>
         <td className="whitespace-nowrap px-4 py-2 text-gray-700">{e.category}</td>

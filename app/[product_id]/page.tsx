@@ -16,15 +16,15 @@ import { useTranslation } from 'react-i18next'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../_componants/Carsoual'
 import { useParams } from 'next/navigation';
 
-export const Rates = createContext(true)
+export const MyRates = createContext(true)
 
 
 
-function page({params}:any) {
+function page() {
 
   const [count,setCount] = useState(1)
-  const { product_id }:any = use(params);
-
+  const params = useParams();
+  const product_id = params.product_id;
 
 
 const [isZoomed, setIsZoomed] = useState(false);
@@ -124,12 +124,12 @@ const { t, i18n } = useTranslation();
     <>
     <Toaster />
     <Navbar className="text-black" />
-<Rates.Provider value={setWindow}>
+<MyRates.Provider value={setWindow}>
 {rate_window ? (
       <Rate_window id_product={`${product_id}`} />
 
 ) : null}
-</Rates.Provider>
+</MyRates.Provider>
     <div className="parent py-[80px] flex justify-center">
         <div className="container flex flex-col items-center max-xl:px-[5px]">
           {/* breadChumb first page */}
