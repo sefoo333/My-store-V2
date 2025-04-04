@@ -68,7 +68,7 @@ My Name is seifeldeen Ali, I Enthusiastic and detail-oriented Frontend Developer
         </a>
     </div>
     <div className="github rounded-full p-[10px] bg-blue-400">
-        <a href="https://www.linkedin.com/in/sefoo333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+        <a href="https://www.linkedin.com/in/sefoo333">
             <FaLinkedin size={30} />
         </a>
     </div>
