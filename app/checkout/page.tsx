@@ -89,13 +89,20 @@ function page() {
         if (doc.data().payments.length === 0){
           setIndex(1)
         }
+
       })
-
-
+      
+      
       return () => {
         featuree()
       }
     },[user])
+  
+    useEffect(() => {
+      if (!user) {
+        window.open("/login" , "_parent")
+            }
+    },[])
     
     const Tax = 20;
     const Discount = 0;

@@ -252,7 +252,7 @@ const { t, i18n } = useTranslation();
 </a>
 <Link
   className="inline-block text-nowrap transition-[0.5s] rounded-full w-full  text-center border border-[#19376D] px-12 max-xl:px-9 py-4 text-md font-semibold text-[#19376D] hover:bg-[#19376D] hover:text-white focus:ring-3 focus:outline-hidden"
-  href="/checkout"
+  href={`${data ? "/checkout" : "/login"}`}
   onClick={() => {
     addToCart()
   }}

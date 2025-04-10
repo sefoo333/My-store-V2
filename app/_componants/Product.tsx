@@ -75,7 +75,7 @@ const user:any = useContext(Provider)
   return (
    <>
    
-   <div className={`card mt-[90px] max-xl:mt-[30px] w-[300px] rounded-xl  ${props?.parentsize} max-xl:w-full`}>
+   <div className={`card mt-[90px] max-xl:mt-[30px] w-[300px]  rounded-xl  ${props?.parentsize} max-xl:w-full`}>
             <Toaster />
           <div className="image bg-[#e9e9e9] dark:bg-gray-800 rounded-2xl  flex justify-center p-[20px] py-[40px]">
           {props.discont > 0 ? (
@@ -86,6 +86,7 @@ const user:any = useContext(Provider)
           </Link>
           </div>
           <div className="text p-[10px]">
+          <Link href={`/${props.id}`}>
 <div className="two flex justify-between mb-[10px]">
 <h1 className='font-semibold text-[21px] h-[63px] overflow-hidden'>         {props.Title}           </h1>
 <span className='font-semibold text-[22px]'>{user?.price === "EG" ? (<>{(+props.price * 50.57).toFixed(0)}<span className='text-[17px]'>{t("EG")}</span></>) : user?.price === "SAR" ? (<>{(+props.price * 3.75).toFixed(0)}<span className='text-[17px]'>{t("SAR")}</span></>) : `${props.price}$`}</span>
@@ -98,7 +99,7 @@ const user:any = useContext(Provider)
       <span className='ml-1 text-[14px] text-gray-700'>({props?.count})</span>
       
       </div>         
-      
+      </Link>
           </div>
           <div className="buttons flex justify-between h-[45px] gap-[15px]">
           <a
@@ -107,6 +108,7 @@ const user:any = useContext(Provider)
       if (user) {
         addToCart(props.id)
       } else {
+        // changetoLocal(props.element)
         toast.error("Please Sign Up to continue")
       }
    }}
