@@ -60,9 +60,8 @@ const checkvalue = () => {
 
 
 setTimeout(() => checkvalue() , 1000) 
-return () => {
     check()
-}
+
 },[user , user?.payments])
 
 
