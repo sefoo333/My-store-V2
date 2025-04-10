@@ -114,7 +114,8 @@ const [allRates,setallRates] = useState(0)
     }))
   } 
  
-},[])
+  console.log(allRates)
+},[user])
 const { t, i18n } = useTranslation();
 
 
@@ -368,7 +369,7 @@ const { t, i18n } = useTranslation();
               {/* reviews people */}
             <div className="people_rates">
             <h1 className='text-[25px] font-semibold pb-5'>{t("Rate")} </h1>
-  <div className="persons overflow-y-scroll h-[550px]">
+  <div className="persons flex flex-col gap-[15px] overflow-y-scroll h-[550px]">
   {data?.reviews?.map((e:any) => (
     <div className="person max-xl:w-fit p-[15px] bg-gray-50 rounded-2xl" key={e.Name}>
     <div className="two flex justify-between items-center">
@@ -396,14 +397,13 @@ const { t, i18n } = useTranslation();
   <h1 className='text-[25px] font-semibold pb-0'>{t("users_review")} <span className='text-[12px] text-gray-400'>({data?.reviews?.length})</span></h1>
  <div className="rates flex gap-[5px] items-end mb-[20px]">
  <div className="rates text-[22px] mt-[10px] flex text-orange-400">
-     {Array.from(Array(5) , (e,i) => (
+     {Array.from(Array(Math.floor(allRates / data?.reviews?.length) ? Math.floor(allRates / data?.reviews?.length) : 5) , (e,i) => (
          <GoStarFill key={i} />
        ))
      }
      </div>
 {data?.reviews ? (
-       <span className='text-gray-600 text-sm'>{Math.floor(allRates / data?.reviews?.length)}/5</span>
-
+       <span className='text-gray-600 text-sm'>{allRates / data?.reviews?.length.toFixed(1)}/5</span>
 ):(1)}
  </div>
 
@@ -507,7 +507,7 @@ const { t, i18n } = useTranslation();
             </div>
             <div className="fetured_products mt-[130px]">
             <h1 className='font-semibold text-[50px] text-center'>{t("recommend")}</h1>
-            <div className={`products relative grid grid-cols-4 gap-[50px] w-full mt-[60px] justify-center  items-center max-xl:grid-cols-1 max-xl:w-fit `}>
+            <div className={`products relative grid grid-cols-4 max-2xl:grid-cols-3  gap-[50px] w-full mt-[60px] justify-center  items-center max-xl:grid-cols-1 max-xl:w-fit `}>
   <>
   {data22?.slice(0,4).map((e:any) => (
  <Product Title={e.Title} category={e.category} imagesize="w-full" parentsize={"h-[60%]"}  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} id={e?.id} key={e?.id} />

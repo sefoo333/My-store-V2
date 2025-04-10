@@ -98,11 +98,7 @@ function page() {
       }
     },[user])
   
-    useEffect(() => {
-      if (!user) {
-        window.open("/login" , "_parent")
-            }
-    },[])
+   
     
     const Tax = 20;
     const Discount = 0;
@@ -171,7 +167,7 @@ const {t} = useTranslation();
     <div className="container flex flex-row-reverse justify-center gap-[130px] max-xl:flex-col-reverse max-xl:px-[15px]">
 <div className="productsssss bg-[#e3f2fd] border-[2px] border-gray-600/20 basis-[60%] rounded-xl w-full h-[900px]">
     <div className="container p-[40px] flex flex-col h-full justify-between">
-        <div className="cards overflow-hidden flex flex-col gap-[30px]">
+        <div className="cards overflow-y-scroll  overflow-hidden flex flex-col gap-[30px]">
 {cart?.map((e:cart) => (
   <>
        <Cart_checkout element={e} image={e.image} Title={e.Title} userid={user?.id} category={e.category} price={e.price} id={e.id} key={e.id} count={e.count} />
@@ -389,15 +385,15 @@ const {t} = useTranslation();
 <form className='my-[40px] flex flex-col gap-[35px]' action="">
 <div className="fullName">
               <label htmlFor='card_num' className='font-semibold text-[17px] text-slate-600'>{t("country")}</label>
-              <input id='card_num' type="text" onChange={(e) => setAddress1(e.target.value)} placeholder='Seifeldeen Ali' className='mt-[10px] font-semibold text-[17px] flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
+              <input id='card_num' type="text" onChange={(e) => setAddress1(e.target.value)} placeholder='Your Country - Adress' className='mt-[10px] font-semibold text-[17px] flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
             </div>
 <div className="fullName">
               <label htmlFor='card_num' className='font-semibold text-[17px] text-slate-600'>{t("city")}</label>
-              <input id='card_num' maxLength={20} type="text" onChange={(e) => setAddress2(e.target.value)} placeholder='0000-0000-0000-0000' className='mt-[10px] font-semibold text-[17px] flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
+              <input id='card_num' maxLength={20} type="text" onChange={(e) => setAddress2(e.target.value)} placeholder='City' className='mt-[10px] font-semibold text-[17px] flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
             </div>
 <div className="fullName ">
               <label htmlFor='cvc' className='font-semibold text-[17px] text-slate-600'>{t("postal_code")}</label>
-              <input id='cvc' type="text" maxLength={3} onChange={(e) => setAddress3(e.target.value)} placeholder='MM/YY' className='mt-[10px] font-semibold text-[17px] flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
+              <input id='cvc' type="text" onChange={(e) => setAddress3(e.target.value)} placeholder='Your Pastel Code' className='mt-[10px] font-semibold text-[17px] flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
             </div>
 
 <label htmlFor="Option1" className="inline-flex items-center gap-3">
@@ -479,22 +475,20 @@ setSave2(e.target.checked);
       ))}
       </>
     ) : null}
-     <h1 className='font-semibold text-[17px] mt-[10px] text-gray-600' style={{textDecoration:"underline" , cursor:"pointer"}}>
-      <Link href={"/settings/payment"}>
+     <h1 onClick={() => setIndex((e) => e+1)} className='font-semibold text-[17px] mt-[10px] text-gray-600' style={{textDecoration:"underline" , cursor:"pointer"}}>
       {t("diffrent_payment")}
-      </Link>
      </h1>
      </div>
 
 
      <div className="buttons flex justify-center mt-[100px] max-xl:h-[65px] max-xl:w-full">
-     <a
+     <Link
   className=" rounded-sm border duration-500 border-[#1084d8] px-20 py-6 max-xl:px-10 max-xl:py-3  flex justify-center items-center text-xl font-medium text-[#1084d8] hover:bg-[#1084d8] hover:text-white focus:ring-3 focus:outline-hidden"
-  href="#"
+  href="/cart"
   onClick={() => setIndex((e) => e-1)}
 >
   {t("cancel")}
-</a>
+</Link>
     <a
   className=" w-full text-center duration-500 rounded-xl text-nowrap border flex justify-center items-center border-[#1084d8] bg-[#1084d8] px-20 py-6 max-xl:px-10 max-xl:py-3 text-xl ml-[30px] font-medium text-white hover:bg-transparent hover:text-[#1084d8] focus:ring-3 focus:outline-hidden"
   href="#"

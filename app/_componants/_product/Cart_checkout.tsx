@@ -52,7 +52,7 @@ function Cart_checkout(props:any) {
 
 
   return (
- <div className="card flex items-center justify-between py-[15px] pl-[10px] px-[35px] bg-white rounded-2xl border-[1px] border-[#f3f3f6]" >
+ <div className="card flex max-xl:flex-col max-xl:gap-[17px] items-center justify-between py-[15px] pl-[10px] px-[35px] bg-white rounded-2xl border-[1px] border-[#f3f3f6]" >
      <div className="one flex flex-row-reverse items-start font-semibold gap-[18px]">
  <div className="text">
  <h1 className='text-[20px]'>{props.Title.split(" ").slice(0,6).join(" ")}....</h1>

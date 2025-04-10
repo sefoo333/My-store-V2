@@ -4,12 +4,40 @@ import Navbar from "../_componants/Navbar"
 import Image from "next/image"
 import { IoPersonSharp } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../config";
+import { useContext, useState } from "react";
+import { Provider } from "../_context/Context";
+import { toast, Toaster } from "sonner";
 
  function page() {
+
+  const user:{email:string} = useContext(Provider)
   const { t, i18n } = useTranslation();
+
+const [Name , setName] = useState("")
+const [Name2 , setName2] = useState("")
+const [email , setEmail] = useState("")
+const [Phone , setPhone] = useState("")
+const [Massege , setMassege] = useState("")
+  const uploadEmail = async () => {
+   if(Massege !== "" && Name !== "" ){
+    await setDoc(doc(db,"emails" , `Email-${Date.now()}`) , {
+      Name:`${Name} ${Name2}`,
+      email:email,
+      phone:Phone,
+      massege:Massege,
+Date:new Date(),
+    })
+    toast.success("Email Sended !")
+   } else {
+    toast.error("Please apply the fields")
+   }
+  }
 
   return (
     <>
+    <Toaster />
         <Navbar className=" text-black" />
    <div className="parent  flex justify-center">
     <div className="container py-[80px] flex flex-col items-center">
@@ -31,42 +59,46 @@ import { useTranslation } from "react-i18next";
       <p className="text-[16px] text-gray-200 w-[80%]">{t("contact_par")}</p>
     </div>
   </div>
-  <div className="form w-[40%] flex-col flex gap-[20px] max-md:w-full max-xl:w-[70%]">
+  <form onSubmit={(e) => {
+    e.preventDefault()
+    uploadEmail()
+  }} className="form w-[40%] flex-col flex gap-[20px] max-md:w-full max-xl:w-[70%]">
     <div className="Name flex gap-[30px] max-md:flex-col">
       <div className="t1 flex flex-col gap-[15px] basis-1/2">
       <label htmlFor="first" className="font-semibold">{t("first")}</label>
-      <input placeholder="First Name" id="first" className="flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" type="text" name="first"  />
+      <input onChange={(e) => setName(e.target.value)} placeholder="First Name" id="first" className="flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" type="text" name="first"  />
       </div>
       <div className="t2 flex-col flex gap-[15px] basis-1/2">
       <label  htmlFor="last" className="font-semibold">{t("last")}</label>
-      <input placeholder="Last Name" id="last" className="flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" type="text" name="last"  />
+      <input onChange={(e) => setName2(e.target.value)} placeholder="Last Name" id="last" className="flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" type="text" name="last"  />
       </div>
     </div>
     <div className="email flex flex-col gap-[15px]">
     <label htmlFor="email" className="font-semibold">{t("email")}  <span className="text-red-400">*</span></label>
-    <input placeholder="Your Email" id="email" className="flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" type="email" name="email"  />
+    <input placeholder="Your Email" onChange={(e) => setEmail(e.target.value)} id="email" className="flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" type="email" name="email"  />
     </div>
     <div className="phone flex-col flex gap-[15px]">
     <label htmlFor="phone" className="font-semibold">{t("phone")}  <span className="text-red-400">*</span></label>
-    <input placeholder="Phone Number" id="phone" className="flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" type="text" name="email"  />
+    <input onChange={(e) => setPhone(e.target.value)} placeholder="Phone Number" id="phone" className="flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" type="text" name="email"  />
     </div>
     <div className="massege flex flex-col gap-[15px]">
     <label htmlFor="massege" className="font-semibold">{t("Massege")} <span className="text-red-400">*</span></label>
     <textarea
     id="massege"
+    onChange={(e) => setMassege(e.target.value)}
 className="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
     rows={4}
     placeholder="Enter your massege here..."
   ></textarea>
     </div>
     <div className="button">
-    <a
-  className="inline-block rounded-sm w-full text-center bg-[#19376D] px-8 py-5 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
->
-  {t("send")}
-</a>
+    <input
+    type="submit"
+value={`${t("send")}`}
+className="inline-block rounded-sm w-full text-center bg-[#19376D] px-8 py-5 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
+/>
     </div>
-  </div>
+  </form>
 </div>
     </div>
    </div>

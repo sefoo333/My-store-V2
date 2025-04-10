@@ -15,6 +15,7 @@ import { db } from '@/app/config';
 import { PiPencilSimpleSlashFill } from 'react-icons/pi';
 import { FaCreditCard, FaSave } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import { MdDelete } from "react-icons/md";
 
 interface user {
   Adress:{
@@ -60,6 +61,8 @@ function Payment() {
                         }),
                         })
 
+                        location.reload();
+
       }
     }
     const {t} = useTranslation();
@@ -81,7 +84,7 @@ function Payment() {
 </div>
         <div className="information_credit  mt-[60px] relative z-1">
 <div className="two">
-<h1 className='text-[35px] flex gap-[20px]'><span>****</span>  <span>****</span>  <span>****</span>  <span>{user?.payments?.length > 1 ? user?.payments[0]?.card_num?.slice(0,4) : null}</span></h1>
+<h1 className='text-[35px] flex gap-[20px]'><span>****</span>  <span>****</span>  <span>****</span>  <span>{user?.payments?.length >= 1 ? user?.payments[0]?.card_num?.slice(0,4) : null}</span></h1>
 <h1 className='uppercase text-[20px] mt-[5px]'>{user?.UserName}</h1>
 </div>
          <div className="group flex justify-between">
@@ -109,7 +112,7 @@ function Payment() {
      <div className="cards flex flex-col gap-[30px]">
       {
         user?.payments?.map((e:Payment_carde , index) => (
-        <Payment_card card_num={e.card_num} ccv={e.ccv} data_end={e.date_end} id={index} key={index} />
+        <Payment_card element={e} card_num={e.card_num} ccv={e.ccv} data_end={e.date_end} id={index} key={index} />
         ))
       }
 

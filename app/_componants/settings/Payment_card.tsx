@@ -3,10 +3,10 @@
 import React, { useContext, useState } from 'react'
 import { AiOutlineEdit } from 'react-icons/ai'
 import { FaSave } from 'react-icons/fa'
-import { MdDateRange } from 'react-icons/md'
+import { MdDateRange, MdDelete } from 'react-icons/md'
 import { RiVisaLine } from 'react-icons/ri'
 import { PiPencilSimpleSlashFill } from "react-icons/pi";
-import { doc, updateDoc } from 'firebase/firestore'
+import { arrayRemove, doc, updateDoc } from 'firebase/firestore'
 import { db } from '@/app/config'
 import { Provider } from '@/app/_context/Context'
 import { RiMastercardFill } from "react-icons/ri";
@@ -18,6 +18,7 @@ interface Payment_carde{
     ccv:number,
     data_end:string,
     id?:number,
+    element?:object,
   }
 
 function Payment_card(props:Payment_carde) {
@@ -66,6 +67,13 @@ function Payment_card(props:Payment_carde) {
       
         
     }
+
+    const deletePayment = async (value:any) => {
+      await updateDoc(doc(db,"users" , `${user?.id}`) , {
+        payments:arrayRemove(value),
+      })
+      location.reload();
+    }
 const {t} = useTranslation();
   return (
         <>
@@ -113,15 +121,19 @@ const {t} = useTranslation();
                   <input type="text" onChange={(e) => setDate(e.target.value)} placeholder='Edit your Date end ' className='mt-[10px] font-semibold text-[17px] flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm'  />
                 </div>
               </div>
-           <div className="b-g flex justify-end gap-[20px]">
+           <div className="b-g flex justify-end gap-[20px] items-center">
            <div className="button edit bg-blue-500 rounded-xl duration-500 hover:bg-blue-600 text-white border-[1px] border-[#f3f3f6] py-[10px] px-[15px] cursor-pointer flex items-center gap-[10px]">
-              <input type='submit' value={t("submit")}  />
+              <input type='submit' value={t("submit")} className='w-full h-full'  />
     <FaSave />
               </div>
            <div onClick={() => setEdit(!edit)} className="button edit bg-red-500 rounded-xl duration-500 hover:bg-red-600 text-white border-[1px] border-[#f3f3f6] py-[10px] px-[15px] cursor-pointer flex items-center gap-[10px]">
 {t("cancel")}
     <PiPencilSimpleSlashFill size={18} />
               </div>
+                        <MdDelete onClick={() => {
+                          deletePayment(props.element)
+                        }} color='red' size={20} />
+              
            </div>
               </form>
         )}

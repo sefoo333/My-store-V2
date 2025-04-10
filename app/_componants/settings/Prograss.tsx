@@ -37,16 +37,16 @@ const check = () => {
     //     setValue((e) => e + 20);
     // }
     if (user?.Adress.Country !== "" && user?.Adress.City !== "" && user?.Adress.postal_code !== "" ) {
-        setValue((e) => e+ 20);
+        setValue((e) => e + 20);
         count++
     }
 
     if (user?.UserName !== "" && user?.Email !== "" && user?.Adress.Country !== "") {
-        setValue((e) => e+ 20);
+        setValue((e) => e + 20);
         count++
       }
       
-      if (user?.payments.length > 0) {
+      if (user?.payments?.length !== 0) {
         setValue((e) => e + 20);
         count++
       }
@@ -63,7 +63,7 @@ setTimeout(() => checkvalue() , 1000)
 return () => {
     check()
 }
-},[])
+},[user , user?.payments])
 
 
   return (

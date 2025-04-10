@@ -42,9 +42,9 @@ useEffect(() =>{
   const [menuopen , setMenu] = useState(false)
   return (
    <div className={"parent flex justify-center shadow relative z-20 " + ` ${props?.classParent}`}>
-     <div className={`container  flex  justify-between items-center py-[25px] px-[30px] max-xl:flex-row  ${props.className}`}>
+     <div className={`container  flex  justify-between items-center py-[25px] px-[30px] max-xl:px-[15px] max-xl:flex-row  ${props.className}`}>
      {/* <h1 className='text-[25px] font-semibold'>Sefoo Store</h1> */}
-<Link href={"/"}>
+<Link href={"/"} className='max-xl:w-[175px]'>
 {props.white ? (
   <Image src={"/logo2.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
 
@@ -55,7 +55,7 @@ useEffect(() =>{
        {/* <div className="search basis-[70%]">
         <Search />
        </div> */}
-       <ul className={`flex items-center max-xl:z-[999999999999999999999999999999999999] dark:text-white gap-[50px] text-[18px] ${!menuopen ? "max-xl:left-[-500px] max-xl:blur-2xl max-xl:opacity-0 max-xl:z-[-9999999]" : " max-xl:opacity-100 max-xl:blur-none max-xl:z-[999999999999999999999]"} max-xl:left-0 max-xl:font-semibold max-xl:flex-col max-xl:justify-center duration-500 max-xl:top-0 max-xl:w-full max-xl:h-full max-xl:text-white max-xl:bg-[#0000008f] max-xl:fixed `}>
+       <ul className={`flex items-center max-xl:z-[999999999999999999999999999999999999999999999999999999999999999999999999999999999999] dark:text-white gap-[50px] text-[18px] ${!menuopen ? "max-xl:left-[-500px] max-xl:blur-2xl max-xl:opacity-0 max-xl:z-[-9999999]" : " max-xl:opacity-100 max-xl:blur-none max-xl:z-[999999999999999999999]"} max-xl:left-0 max-xl:font-semibold max-xl:flex-col max-xl:justify-center duration-500 max-xl:top-0 max-xl:w-full max-xl:h-full max-xl:text-white max-xl:bg-[#0000008f] max-xl:fixed `}>
           <div className="cancel absolute right-3 hidden max-xl:block top-3" onClick={() => setMenu(!menuopen)}>
 <MdCancel size={35} />
           </div>
@@ -88,6 +88,7 @@ useEffect(() =>{
             </li>
              <li onClick={() => {
               signOut(auth)
+              window.open("/login" , "_parent")
             }} className='transition-[0.5s] cursor-pointer hover:text-gray-200 max-xl:block xl:hidden'>
               
               Log Out

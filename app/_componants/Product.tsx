@@ -75,7 +75,7 @@ const user:any = useContext(Provider)
   return (
    <>
    
-   <div className={`card mt-[90px] max-xl:mt-[30px] w-[300px]  rounded-xl  ${props?.parentsize} max-xl:w-full`}>
+   <div className={`card mt-[90px] max-xl:mt-[30px] w-[300px]   rounded-xl  ${props?.parentsize} max-xl:w-full`}>
             <Toaster />
           <div className="image bg-[#e9e9e9] dark:bg-gray-800 rounded-2xl  flex justify-center p-[20px] py-[40px]">
           {props.discont > 0 ? (

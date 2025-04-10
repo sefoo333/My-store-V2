@@ -246,7 +246,7 @@ const product:any = useRef(null)
               </span> */}
             <div className="cccy relative  overflow-x-hidden scroll-smooth" ref={product} onClick={(e) => {
             }}>
-            <div className={`products relative grid grid-cols-4 max-md:grid-cols-1 max-xl:grid-cols-2 w-full mt-[60px] justify-start justify-items-center `}>
+            <div className={`products relative grid grid-cols-4 max-2xl:grid-cols-3 gap-[40px] w-full mt-[60px] justify-start justify-items-center  max-xl:grid-cols-2 max- max-md:grid-cols-1`}>
             {products.slice(0,4).map((e:any) => (
  <Product Title={e.Title} category={e.category} count={e?.count} imagesize="w-full" Description={e.description} Rate={5} price={e.price} discount={e.discount} thumb={e.image} id={e.id} key={e.id} />
 ))}
