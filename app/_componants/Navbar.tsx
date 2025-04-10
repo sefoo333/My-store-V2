@@ -11,6 +11,7 @@ import { IoMenu } from "react-icons/io5";
 import { MdCancel } from "react-icons/md";
 import { useTranslation } from 'react-i18next';
 import { signOut } from 'firebase/auth';
+import { FiLogIn } from "react-icons/fi";
 
 function Navbar(props:any) {
   const data:any = useContext(Provider)
@@ -78,22 +79,30 @@ useEffect(() =>{
               {t("Contact_Nav")}
               </Link>
             </li>
-            <li className='transition-[0.5s] cursor-pointer hover:text-gray-200 max-xl:block xl:hidden'>
+           {data ? (
+      <>
+        <li className='transition-[0.5s] cursor-pointer hover:text-gray-200 max-xl:block xl:hidden'>
               <Link href={"/settings/profile"}>
               My Account
               </Link>
             </li>
-            <li onClick={() => {
+             <li onClick={() => {
               signOut(auth)
             }} className='transition-[0.5s] cursor-pointer hover:text-gray-200 max-xl:block xl:hidden'>
               
               Log Out
             </li>
+      </>
+           ) :  <button
+           className=" text-[17px] hidden max-xl:flex font-semibold rounded-sm border border-blue-600 bg-blue-600 px-12 py-3 text-sm  items-center justify-center text-white hover:bg-transparent hover:text-slate-600 focus:ring-3 focus:outline-hidden"
+         >
+           LogIn 
+         </button>}
         </ul>
      <div className="tools flex gap-[20px] items-center dark:text-white">
      <div className="cart text-[25px] relative cursor-pointer">
-        <Link href={"/cart"}>
-        <div className="counter flex justify-center items-center text-[12px] w-[20px] h-[20px] p-[5px] bg-yellow-500 rounded-full absolute left-[-10px] top-[-10px]">
+     <Link href={`${data ? "/cart" : "/login"}`}>
+     <div className="counter flex justify-center items-center text-[12px] w-[20px] h-[20px] p-[5px] bg-yellow-500 rounded-full absolute left-[-10px] top-[-10px]">
 <span>{cartnum}</span>
         </div>
         <FiShoppingCart />
@@ -104,7 +113,18 @@ useEffect(() =>{
        </div> */}
        <div className="user text-[25px] cursor-pointer">
         <Link href={`${data ? "/settings/profile" : "/login"}`}>
-        {data?.Image !== undefined ? (<img src={data?.Image} alt="profile" width={200} height={200} className='rounded-full h-[30px] w-[30px]' />) : (<FiUser />)}
+{
+  data ? (
+    <>
+            {data?.Image !== undefined ? (<img src={data?.Image} alt="profile" width={200} height={200} className='rounded-full h-[30px] w-[30px]' />)  : (<FiUser />) }
+
+            </>
+  )
+  : 
+  (
+ <FiLogIn />
+  )
+}
         </Link>
        </div>
        <div className="user text-[25px] cursor-pointer relative">

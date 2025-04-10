@@ -19,8 +19,8 @@
 --animate-marquee-vertical:marquee-vertical 40s linear infinite;
 --inset-shadow-card:0px 0px 2px 0px inset #d8d7d7b0;
 --animate-pre-start:tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
---animate-end:slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
---animate-end-sec:slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both;
+--animate-end:slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+--animate-end-sec:slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
 
 }
 @keyframes tracking-in-expand {

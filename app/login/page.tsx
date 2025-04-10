@@ -14,6 +14,7 @@ import { FaUser } from "react-icons/fa";
 import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, db } from '../config';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
+import Link from 'next/link';
 
 
 interface account {
@@ -30,6 +31,7 @@ interface account {
   lang:string,
   price:string,
 }
+import { FiHome } from "react-icons/fi";
 
 
 function page() {
@@ -133,9 +135,15 @@ const [reset,SetReset] = useState(false)
  <div className="parent p-[100px] h-screen overflow-hidden overflow-y-scroll flex justify-center max-xl:px-[40px] max-xl:py-[50px]">
     <div className="container flex h-full justify-between max-xl:flex-col max-xl:w-fit max-xl:h-screen">
       <div className="text xl:basis-[35%]">
-        <div className="title font-semibold text-[55px] text-white">
+        <div className="title font-semibold flex justify-between items-center text-[55px] text-white">
           {/* <h1>Sefoo Store</h1> */}
 <Image src={"/logo2.png"} width={300} height={100} alt='' className='h-[55px] object-cover' />
+<div className="Home text-[16px] font-semibold ">
+<Link href={"/"}>
+<h1 className='max-xl:hidden'>Return To Home</h1>
+<FiHome className='xl:hidden max-xl:mr-[40px] ' size={27} />
+</Link>
+</div>
         </div>
         <div className="login mt-[60px] text-white max-xl:px-[10px]">
           <h1 className='font-semibold text-[28px] pb-[35px] max-xl:text-[24px]'> {!register ? "Login to" : "Register"} Your Account</h1>
@@ -213,10 +221,12 @@ const [reset,SetReset] = useState(false)
               </div>
             </div>
           ) : null}
+    
 <div className="submit flex justify-center items-center">
 {register ?             <input type="submit" value="Register" className='w-full py-[12px] max-xl:w-[95%] button_login text-black rounded-xl text-2xl font-semibold cursor-pointer mt-[30px]' /> :             <input type="submit" value="Login" className='xl:w-full max-xl:w-[95%] py-[12px] button_login text-black rounded-xl text-2xl font-semibold cursor-pointer' />
 }
 </div>
+
           </form>
        ) : (
         <form action=""  className='max-xl:flex max-xl:flex-col max-xl:items-start'>             
