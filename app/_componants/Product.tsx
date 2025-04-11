@@ -102,7 +102,7 @@ const user:any = useContext(Provider)
       </Link>
           </div>
           <div className="buttons flex justify-between h-[45px] gap-[15px]">
-          <a
+          <button
      className="inline-block duration-300 w-full rounded-sm border border-blue-600 text-center bg-blue-600 px-10 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:ring-3 focus:outline-hidden"
      onClick={() => {
       if (user) {
@@ -114,7 +114,7 @@ const user:any = useContext(Provider)
    }}
    >
      {t("add_cart")}
-   </a>
+   </button>
    <div onClick={() => {
       addToWishlist();
         setWishlist((e) => e++)
