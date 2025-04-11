@@ -34,7 +34,6 @@ function page() {
 {/* <h1 className=' text-[120px] leading-[120px] font-[900] left-[200px] top-[38%]'>Seifeldeen <span className='block text-end relative left-[40px]'>Ali</span></h1> */}
 <p className='text-justify w-[600px] mt-[40px] max-xl:w-full'>
 My Name is seifeldeen Ali, I Enthusiastic and detail-oriented Frontend Developer skilled in building user interfaces with React and Next gaining. hands-on experience in developing interactive, responsive web applications. in addition to, Strong understanding of HTML, CSS, and JavaScript, with a passion for creating smooth and efficient user experiences.
-My Name is seifeldeen Ali, I Enthusiastic and detail-oriented Frontend Developer skilled in building user interfaces with React and Next gaining. hands-on experience in developing interactive, responsive web applications. in addition to, Strong understanding of HTML, CSS, and JavaScript, with a passion for creating smooth and efficient user experiences.
 </p>
 
 <div className="number flex gap-[50px] mt-[40px] *:text-nowrap max-xl:flex-col max-xl:w-full">
