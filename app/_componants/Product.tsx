@@ -82,7 +82,7 @@ const user:any = useContext(Provider)
             <span className='Discount absolute text-[17px] font-extralight text-white px-[15px] py-[5px] bg-red-400 left-[15px] top-[30px] rounded-sm'>-{props.discont}%</span>
           ) : null}
           <Link href={`/${props.id}`} className={` ${props.imagesize} flex justify-center`}>
-          <img src={`${props?.thumb}`} className='w-[200px] h-[200px] object-contain' alt='' width={200} height={200} />
+          <Image src={`${props?.thumb}`} className='w-[200px] h-[200px] object-contain' alt='' width={200} height={200} />
           </Link>
           </div>
           <div className="text p-[10px]">
