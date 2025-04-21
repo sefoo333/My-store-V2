@@ -120,6 +120,8 @@ const { t, i18n } = useTranslation();
 
 
 
+
+
   return (
     <>
     <Toaster />
@@ -509,10 +511,13 @@ const { t, i18n } = useTranslation();
             <h1 className='font-semibold text-[50px] text-center'>{t("recommend")}</h1>
             <div className={`products relative grid grid-cols-4 max-2xl:grid-cols-3  gap-[50px] w-full mt-[60px] justify-center  items-center max-xl:grid-cols-1 max-xl:w-fit `}>
   <>
-  {data22?.slice(0,4).map((e:any) => (
+
+    </>
+    <>
+{data22?.slice(0,4).map((e:any) => (
  <Product Title={e.Title} category={e.category} imagesize="w-full" parentsize={"h-[60%]"}  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} id={e?.id} key={e?.id} />
 ))}
-  </>
+    </>
             </div>
             </div>
         </div>
