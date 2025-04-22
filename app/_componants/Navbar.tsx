@@ -44,7 +44,7 @@ useEffect(() =>{
    <div className={"parent flex justify-center shadow relative z-20 " + ` ${props?.classParent}`}>
      <div className={`container  flex  justify-between items-center py-[25px] px-[30px] max-xl:px-[15px] max-xl:flex-row  ${props.className}`}>
      {/* <h1 className='text-[25px] font-semibold'>Sefoo Store</h1> */}
-<Link href={"/"} className='max-xl:w-[175px]'>
+<Link href={"/"} className='max-xl:w-[175px]' aria-label='Logo Website'>
 {props.white ? (
   <Image src={"/logo2.png"} alt='' width={300} height={100} className='h-[55px] object-cover max-xl:h-[30px]' />
 
@@ -102,7 +102,7 @@ useEffect(() =>{
         </ul>
      <div className="tools flex gap-[20px] items-center dark:text-white">
      <div className="cart text-[25px] relative cursor-pointer">
-     <Link href={`${data ? "/cart" : "/login"}`}>
+     <Link href={`${data ? "/cart" : "/login"}`} aria-label='cart section'>
      <div className="counter flex justify-center items-center text-[12px] w-[20px] h-[20px] p-[5px] bg-yellow-500 rounded-full absolute left-[-10px] top-[-10px]">
 <span>{cartnum}</span>
         </div>
@@ -113,7 +113,7 @@ useEffect(() =>{
         <FiSearch />
        </div> */}
        <div className="user text-[25px] cursor-pointer">
-        <Link href={`${data ? "/settings/profile" : "/login"}`}>
+        <Link href={`${data ? "/settings/profile" : "/login"}`} aria-label='Profile section'>
 {
   data ? (
     <>
@@ -129,7 +129,7 @@ useEffect(() =>{
         </Link>
        </div>
        <div className="user text-[25px] cursor-pointer relative">
-    <Link href={"/wishlist"}>
+    <Link href={"/wishlist"} aria-label='wishlist section'>
     {cartnum2 > 0 ? (
       <div className="counter flex justify-center items-center text-[12px] w-[15px] h-[15px] p-[5px] bg-red-400 rounded-full absolute left-[-8px] top-[-6px]">
         </div>
