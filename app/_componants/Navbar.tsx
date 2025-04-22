@@ -94,12 +94,12 @@ useEffect(() =>{
               Log Out
             </li>
       </>
-           ) :  <button
+           ) :  <li
            aria-label='Login to website'
            className=" text-[17px] hidden max-xl:flex font-semibold rounded-sm border border-blue-600 bg-blue-600 px-12 py-3 text-sm  items-center justify-center text-white hover:bg-transparent hover:text-slate-600 focus:ring-3 focus:outline-hidden"
          >
            LogIn 
-         </button>}
+         </li>}
         </ul>
      <div className="tools flex gap-[20px] items-center dark:text-white">
      <div className="cart text-[25px] relative cursor-pointer">
