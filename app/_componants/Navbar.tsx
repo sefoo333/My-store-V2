@@ -95,6 +95,7 @@ useEffect(() =>{
             </li>
       </>
            ) :  <button
+           aria-label='Login to website'
            className=" text-[17px] hidden max-xl:flex font-semibold rounded-sm border border-blue-600 bg-blue-600 px-12 py-3 text-sm  items-center justify-center text-white hover:bg-transparent hover:text-slate-600 focus:ring-3 focus:outline-hidden"
          >
            LogIn 
