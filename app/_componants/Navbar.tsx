@@ -56,9 +56,9 @@ useEffect(() =>{
         <Search />
        </div> */}
        <ul className={`flex items-center max-xl:z-[999999999999999999999999999999999999999999999999999999999999999999999999999999999999] dark:text-white gap-[50px] text-[18px] ${!menuopen ? "max-xl:left-[-500px] max-xl:blur-2xl max-xl:opacity-0 max-xl:z-[-9999999]" : " max-xl:opacity-100 max-xl:blur-none max-xl:z-[999999999999999999999]"} max-xl:left-0 max-xl:font-semibold max-xl:flex-col max-xl:justify-center duration-500 max-xl:top-0 max-xl:w-full max-xl:h-full max-xl:text-white max-xl:bg-[#0000008f] max-xl:fixed `}>
-          <span className="cancel absolute right-3 hidden max-xl:block top-3" onClick={() => setMenu(!menuopen)}>
+          <li className="cancel absolute right-3 hidden max-xl:block top-3" onClick={() => setMenu(!menuopen)}>
 <MdCancel size={35} />
-          </span>
+          </li>
             <li className='transition-[0.5s] cursor-pointer hover:text-gray-200'>
               <Link href={"/"}>
               {t("Home_Nav")}
