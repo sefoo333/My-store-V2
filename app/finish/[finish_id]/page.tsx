@@ -32,9 +32,8 @@ const getData = async () => {
  const data:any = (await getDoc(doc(db , "orders" , `${set_id}`))).data();
 setData(data)
 }
-return () => {
   getData()
-}
+
   },[])
   const {t} = useTranslation();
 

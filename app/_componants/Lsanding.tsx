@@ -22,10 +22,10 @@ function Landing() {
            
           
     <h1 className='text-[80px] font-semibold leading-[1.3] mb-[15px] max-md:w-full max-md:text-5xl max-md:text-center'> 
-    <BlurFade delay={1.25} inView>
+    <BlurFade inView>
         {t("landing_title").split(" ").slice(0,2).join(" ")}
       </BlurFade>
-      <BlurFade delay={1.25} inView>
+      <BlurFade delay={0.10} inView>
       {t("landing_title").split(" ").slice(2,t("landing_title").length).join(" ")}
       </BlurFade>
     </h1>
@@ -42,7 +42,7 @@ function Landing() {
 </Link>
            </div>
         </div>
-<BlurFade delay={2.50} inView>
+<BlurFade delay={0.25} inView>
        <div className="image flex justify-end max-md:hidden">
        <div className="imagee flex justify-center items-center">
 
