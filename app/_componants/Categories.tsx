@@ -23,10 +23,9 @@ const getCategories = async () => {
     return data
 }
 
-return () => {
     getCategories()
 
-}
+
 },[data])
   return (
    <div className="parent relative p-parent2 overflow-hidden max-md:px-[55px] max-md:py-[80px]">
