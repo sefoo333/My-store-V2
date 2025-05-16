@@ -20,6 +20,7 @@ export default function Home() {
       <Partnar_sec />
       <Top />
       <Thanks />
+      <Footer />
     </div>
   );
 }
