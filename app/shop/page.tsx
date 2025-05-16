@@ -304,7 +304,7 @@ const [cart,setCart] = useState([])
      {filtermoney.length > 0 ? (
       <>
       {filtermoney.map((e:any) => (
-        <Product Title={e.Title} imagesize="w-full"  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} key={e.id} />
+        <Product Title={e.Title} imagesize="w-full" id={e.id}  Description={e.description} Rate={e.rate} price={e.price} discount={e.discount} thumb={e.image} key={e.id} />
        ))}
        </>
      ) : (
